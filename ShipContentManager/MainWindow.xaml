@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShipContentManager"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Ship Content Manager" Height="602" Width="918">
+    <Window.Resources>
+
+        <Storyboard x:Key="sbShowHamburgerMenu" >
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" From="-120,40,0,0" To="0,40,0,0" DecelerationRatio=".9" Duration="0:0:0.3" />
+        </Storyboard>
+        <Storyboard x:Key="sbHideHamburgerMenu">
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0,40,0,0" To="-120,40,0,0" AccelerationRatio=".9" Duration="0:0:0.3" />
+        </Storyboard>
+    </Window.Resources>
     <Grid>
+        <Grid Background="#e8175d" VerticalAlignment="Top" Height="40">
+        </Grid>
+        <StackPanel Panel.ZIndex="2" Name="pnlLeftMenu" Orientation="Horizontal" HorizontalAlignment="Left" Margin="-120,40,0,0" VerticalAlignment="Stretch">
+
+            <Border BorderBrush="#000000" BorderThickness="1" Width="150" Background="#474747">
+                <Grid>
+                    <Button x:Name="btnPacks" HorizontalAlignment="Center" VerticalAlignment="Top" Width="148" Height="20" Margin="0,50,0,0" Visibility="Hidden" Content="Packs" Background="#363636" Click="btnPacks_Click" Foreground="White" BorderBrush="#FFE8175D" />
+                    <Button x:Name="btnQuestions" HorizontalAlignment="Center" VerticalAlignment="Top" Width="148" Height="20" Margin="0,80,0,0" Visibility="Hidden" Content="Questions" Background="#363636" Click="btnQuestions_Click" Foreground="White" BorderBrush="#FFE8175D" />
+                    <Grid HorizontalAlignment="Right" VerticalAlignment="Stretch">
+                        <Button x:Name="btnHamburger" Width="30" Height="30" Click="btnHamburger_Click" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}">
+                            <Image Source="/Images/hamburger.png" Width="25" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                        </Button>
+                    </Grid>
+                </Grid>
+            </Border>
+        </StackPanel>
+
 
     </Grid>
 </Window>
