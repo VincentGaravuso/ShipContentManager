@@ -60,7 +60,22 @@ namespace ShipContentManager
 
         private void btnPacks_Click(object sender, RoutedEventArgs e)
         {
-
+            for (int i = 0; i < 3; i++)
+            {
+                Grid packGrid = new Grid();
+                ColumnDefinition column = new ColumnDefinition();
+                column.Width = GridLength.Auto;
+                packGrid.ColumnDefinitions.Add(column);
+                packGrid.VerticalAlignment = VerticalAlignment.Top;
+                packGrid.HorizontalAlignment = HorizontalAlignment.Center;
+                packGrid.Margin = new Thickness(0, 50, 0, 0);
+                PacksUserControl packsUserControl = new PacksUserControl();
+                packsUserControl.lblPackName.Content = $"Pack {i}";
+                packsUserControl.lblDateCreated.Content = DateTime.Now.ToString("dd/mm/yyyy");
+                packsUserControl.HorizontalAlignment = HorizontalAlignment.Center;
+                packsUserControl.VerticalAlignment = VerticalAlignment.Top;
+                packGrid.Children.Add(packsUserControl);
+            }
         }
 
         private void btnQuestions_Click(object sender, RoutedEventArgs e)
