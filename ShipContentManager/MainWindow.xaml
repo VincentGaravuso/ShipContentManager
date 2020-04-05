@@ -26,14 +26,17 @@
                     <Button x:Name="btnQuestions" HorizontalAlignment="Center" VerticalAlignment="Top" Width="148" Height="20" Margin="0,80,0,0" Visibility="Hidden" Content="Questions" Background="#363636" Click="btnQuestions_Click" Foreground="White" BorderBrush="#FFE8175D" />
                     <Grid HorizontalAlignment="Right" VerticalAlignment="Stretch">
                         <Button x:Name="btnHamburger" Width="30" Height="30" Click="btnHamburger_Click" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}">
-                            <Image Source="/Images/hamburger.png" Width="25" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                            <Image Source="/Images/hamburger.png" Width="24" Height="24" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
                         </Button>
                     </Grid>
                 </Grid>
             </Border>
         </StackPanel>
-        <Grid x:Name="packContentGrid" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0, 50, 0, 0">
-        </Grid>
+        
+        <ScrollViewer>
+            <Grid x:Name="packContentGrid" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="30, 40, 0, 0">
+            </Grid>
+        </ScrollViewer>
         
     </Grid>
 </Window>

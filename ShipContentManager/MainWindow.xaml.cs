@@ -60,19 +60,34 @@ namespace ShipContentManager
 
         private void btnPacks_Click(object sender, RoutedEventArgs e)
         {
+            int rowNumber = 0;
+            int columnNumber = 0;
             packContentGrid.ColumnDefinitions.Clear();
-            int leftPadding = 0;
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 16; i++)
             {
                 PacksUserControl packsUserControl = new PacksUserControl();
                 packsUserControl.lblPackName.Content = $"Pack {i}";
                 packsUserControl.lblDateCreated.Content = DateTime.Now.ToString("dd/MM/yyyy");
-                packsUserControl.Margin = new Thickness(leftPadding, 0, 0, 0);
+                packsUserControl.Margin = new Thickness(10, 20, 0, 0);
+                //packsUserControl.HorizontalAlignment = HorizontalAlignment.Left;
+                //packsUserControl.VerticalAlignment = VerticalAlignment.Top;
+
+                if (columnNumber == 3)
+                {
+                    columnNumber = 0;
+                    rowNumber++;
+                }
+                RowDefinition rowDefinition = new RowDefinition();
+                packContentGrid.RowDefinitions.Add(rowDefinition);
+                rowDefinition.Height = GridLength.Auto;
+                Grid.SetRow(packsUserControl, rowNumber);
                 ColumnDefinition columnDefinition = new ColumnDefinition();
                 packContentGrid.ColumnDefinitions.Add(columnDefinition);
-                Grid.SetColumn(packsUserControl, i);
+                columnDefinition.Width = GridLength.Auto;
+                Grid.SetColumn(packsUserControl, columnNumber);
+
                 packContentGrid.Children.Add(packsUserControl);
-                leftPadding += 20;
+                columnNumber++;
             }
         }
 
