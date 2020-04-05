@@ -16,11 +16,10 @@
             <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0,40,0,0" To="-120,40,0,0" AccelerationRatio=".9" Duration="0:0:0.3" />
         </Storyboard>
     </Window.Resources>
-    <Grid>
+    <Grid x:Name="mainGrid">
         <Grid Background="#e8175d" VerticalAlignment="Top" Height="40">
         </Grid>
         <StackPanel Panel.ZIndex="2" Name="pnlLeftMenu" Orientation="Horizontal" HorizontalAlignment="Left" Margin="-120,40,0,0" VerticalAlignment="Stretch">
-
             <Border BorderBrush="#000000" BorderThickness="1" Width="150" Background="#474747">
                 <Grid>
                     <Button x:Name="btnPacks" HorizontalAlignment="Center" VerticalAlignment="Top" Width="148" Height="20" Margin="0,50,0,0" Visibility="Hidden" Content="Packs" Background="#363636" Click="btnPacks_Click" Foreground="White" BorderBrush="#FFE8175D" />
@@ -33,13 +32,8 @@
                 </Grid>
             </Border>
         </StackPanel>
-<<<<<<< Updated upstream
-
-
-=======
         <Grid x:Name="packContentGrid" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0, 50, 0, 0">
         </Grid>
         
->>>>>>> Stashed changes
     </Grid>
 </Window>
