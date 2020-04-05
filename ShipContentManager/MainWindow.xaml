@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShipContentManager"
+        
         mc:Ignorable="d"
         Title="Ship Content Manager" Height="602" Width="918">
     <Window.Resources>
@@ -32,7 +33,13 @@
                 </Grid>
             </Border>
         </StackPanel>
+<<<<<<< Updated upstream
 
 
+=======
+        <Grid x:Name="packContentGrid" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0, 50, 0, 0">
+        </Grid>
+        
+>>>>>>> Stashed changes
     </Grid>
 </Window>

@@ -53,28 +53,26 @@ namespace ShipContentManager
             }
             else if (Storyboard.Contains("Hide"))
             {
-                btnPacks.Visibility = System.Windows.Visibility.Hidden;
-                btnQuestions.Visibility = System.Windows.Visibility.Hidden;
+                btnPacks.Visibility = Visibility.Hidden;
+                btnQuestions.Visibility = Visibility.Hidden;
             }
         }
 
         private void btnPacks_Click(object sender, RoutedEventArgs e)
         {
+            packContentGrid.ColumnDefinitions.Clear();
+            int leftPadding = 0;
             for (int i = 0; i < 3; i++)
             {
-                Grid packGrid = new Grid();
-                ColumnDefinition column = new ColumnDefinition();
-                column.Width = GridLength.Auto;
-                packGrid.ColumnDefinitions.Add(column);
-                packGrid.VerticalAlignment = VerticalAlignment.Top;
-                packGrid.HorizontalAlignment = HorizontalAlignment.Center;
-                packGrid.Margin = new Thickness(0, 50, 0, 0);
                 PacksUserControl packsUserControl = new PacksUserControl();
                 packsUserControl.lblPackName.Content = $"Pack {i}";
-                packsUserControl.lblDateCreated.Content = DateTime.Now.ToString("dd/mm/yyyy");
-                packsUserControl.HorizontalAlignment = HorizontalAlignment.Center;
-                packsUserControl.VerticalAlignment = VerticalAlignment.Top;
-                packGrid.Children.Add(packsUserControl);
+                packsUserControl.lblDateCreated.Content = DateTime.Now.ToString("dd/MM/yyyy");
+                packsUserControl.Margin = new Thickness(leftPadding, 0, 0, 0);
+                ColumnDefinition columnDefinition = new ColumnDefinition();
+                packContentGrid.ColumnDefinitions.Add(columnDefinition);
+                Grid.SetColumn(packsUserControl, i);
+                packContentGrid.Children.Add(packsUserControl);
+                leftPadding += 20;
             }
         }
 
