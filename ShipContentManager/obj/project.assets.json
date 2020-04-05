@@ -8,25 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\vinny\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Jawad Ahsan\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vinny\\source\\repos\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj",
+      "projectUniqueName": "C:\\Users\\Jawad Ahsan\\Documents\\GitHub\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj",
       "projectName": "ShipContentManager",
-      "projectPath": "C:\\Users\\vinny\\source\\repos\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj",
-      "packagesPath": "C:\\Users\\vinny\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vinny\\source\\repos\\ShipContentManager\\ShipContentManager\\obj\\",
+      "projectPath": "C:\\Users\\Jawad Ahsan\\Documents\\GitHub\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj",
+      "packagesPath": "C:\\Users\\Jawad Ahsan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jawad Ahsan\\Documents\\GitHub\\ShipContentManager\\ShipContentManager\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\vinny\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jawad Ahsan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
