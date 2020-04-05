@@ -32,8 +32,7 @@
                 </Grid>
             </Border>
         </StackPanel>
-        <Grid x:Name="packContentGrid" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0, 50, 0, 0">
+        <Grid x:Name="packContentGrid" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,50,0,0">
         </Grid>
-        
     </Grid>
 </Window>

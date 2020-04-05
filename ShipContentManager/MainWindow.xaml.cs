@@ -48,8 +48,8 @@ namespace ShipContentManager
 
             if (Storyboard.Contains("Show"))
             {
-                btnPacks.Visibility = System.Windows.Visibility.Visible;
-                btnQuestions.Visibility = System.Windows.Visibility.Visible;
+                btnPacks.Visibility = Visibility.Visible;
+                btnQuestions.Visibility = Visibility.Visible;
             }
             else if (Storyboard.Contains("Hide"))
             {
@@ -61,18 +61,16 @@ namespace ShipContentManager
         private void btnPacks_Click(object sender, RoutedEventArgs e)
         {
             packContentGrid.ColumnDefinitions.Clear();
-            int leftPadding = 0;
             for (int i = 0; i < 3; i++)
             {
                 PacksUserControl packsUserControl = new PacksUserControl();
                 packsUserControl.lblPackName.Content = $"Pack {i}";
                 packsUserControl.lblDateCreated.Content = DateTime.Now.ToString("dd/MM/yyyy");
-                packsUserControl.Margin = new Thickness(leftPadding, 0, 0, 0);
+                packsUserControl.Margin = new Thickness(20, 0, 0, 0);
                 ColumnDefinition columnDefinition = new ColumnDefinition();
                 packContentGrid.ColumnDefinitions.Add(columnDefinition);
                 Grid.SetColumn(packsUserControl, i);
                 packContentGrid.Children.Add(packsUserControl);
-                leftPadding += 20;
             }
         }
 
