@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Media.Animation;
 using System.Threading;
+using System.Reflection;
 
 namespace ShipContentManager
 {
@@ -30,15 +31,15 @@ namespace ShipContentManager
 
         private void btnHamburger_Click(object sender, RoutedEventArgs e)
         {
-            if(hamburgerMenuOpened)
+            if (hamburgerMenuOpened)
             {
                 ShowHideMenu("sbHideHamburgerMenu", btnPacks, pnlLeftMenu);
-                hamburgerMenuOpened = false;    
+                hamburgerMenuOpened = false;
             }
             else
             {
                 ShowHideMenu("sbShowHamburgerMenu", btnPacks, pnlLeftMenu);
-                hamburgerMenuOpened = true;        
+                hamburgerMenuOpened = true;
             }
         }
         private void ShowHideMenu(string Storyboard, Button btnPacks, StackPanel pnl)
@@ -60,19 +61,69 @@ namespace ShipContentManager
 
         private void btnPacks_Click(object sender, RoutedEventArgs e)
         {
+            //int rowNumber = 0;
+            //int columnNumber = 0;
+            //packContentGrid.ColumnDefinitions.Clear();
+            ////for (int i = 0; i < 16; i++)
+            //{
+            //    PacksUserControl packsUserControl = new PacksUserControl();
+            //    packsUserControl.lblPackName.Content = $"Pack {i + 1}";
+            //    packsUserControl.lblDateCreated.Content = DateTime.Now.ToString("dd/MM/yyyy");
+            //    packsUserControl.Margin = new Thickness(10, 20, 0, 0);
+            //    //packsUserControl.HorizontalAlignment = HorizontalAlignment.Left;
+            //    //packsUserControl.VerticalAlignment = VerticalAlignment.Top;
+
+            //    if (columnNumber == 3)
+            //    {
+            //        columnNumber = 0;
+            //        rowNumber++;
+            //    }
+            //    RowDefinition rowDefinition = new RowDefinition();
+            //    packContentGrid.RowDefinitions.Add(rowDefinition);
+            //    rowDefinition.Height = GridLength.Auto;
+            //    Grid.SetRow(packsUserControl, rowNumber);
+            //    ColumnDefinition columnDefinition = new ColumnDefinition();
+            //    packContentGrid.ColumnDefinitions.Add(columnDefinition);
+            //    columnDefinition.Width = GridLength.Auto;
+            //    Grid.SetColumn(packsUserControl, columnNumber);
+
+            //    packContentGrid.Children.Add(packsUserControl);
+            //    columnNumber++;
+            //}
+
+            generatePacks();
+        }
+
+        private void btnQuestions_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void mainGrid_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            generatePacks();
+        }
+
+        private void generatePacks()
+        {
+
+            int numOfColumns = getNumberOfColumns();
+
             int rowNumber = 0;
             int columnNumber = 0;
             packContentGrid.ColumnDefinitions.Clear();
-            for (int i = 0; i < 16; i++)
+            packContentGrid.RowDefinitions.Clear();
+            packContentGrid.Children.Clear();
+            for (int i = 0; i < 15; i++)
             {
                 PacksUserControl packsUserControl = new PacksUserControl();
-                packsUserControl.lblPackName.Content = $"Pack {i}";
+                packsUserControl.lblPackName.Content = $"Pack {i + 1}";
                 packsUserControl.lblDateCreated.Content = DateTime.Now.ToString("dd/MM/yyyy");
-                packsUserControl.Margin = new Thickness(10, 20, 0, 0);
+                packsUserControl.Margin = new Thickness(20, 20, 0, 0);
                 //packsUserControl.HorizontalAlignment = HorizontalAlignment.Left;
                 //packsUserControl.VerticalAlignment = VerticalAlignment.Top;
 
-                if (columnNumber == 3)
+                if (columnNumber == numOfColumns)
                 {
                     columnNumber = 0;
                     rowNumber++;
@@ -90,10 +141,12 @@ namespace ShipContentManager
                 columnNumber++;
             }
         }
-
-        private void btnQuestions_Click(object sender, RoutedEventArgs e)
+        private int getNumberOfColumns()
         {
-
+            var mainGridWidth = mainGrid.ActualWidth;
+            var numberOfColumns = Convert.ToInt32(mainGridWidth / 250);
+            return numberOfColumns;
         }
     }
 }
+

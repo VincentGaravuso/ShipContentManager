@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShipContentManager"
-        
         mc:Ignorable="d"
         Title="Ship Content Manager" Height="602" Width="918">
     <Window.Resources>
@@ -16,7 +15,7 @@
             <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0,40,0,0" To="-120,40,0,0" AccelerationRatio=".9" Duration="0:0:0.3" />
         </Storyboard>
     </Window.Resources>
-    <Grid x:Name="mainGrid">
+    <Grid x:Name="mainGrid" SizeChanged="mainGrid_SizeChanged">
         <Grid Background="#e8175d" VerticalAlignment="Top" Height="40">
         </Grid>
         <StackPanel Panel.ZIndex="2" Name="pnlLeftMenu" Orientation="Horizontal" HorizontalAlignment="Left" Margin="-120,40,0,0" VerticalAlignment="Stretch">
@@ -32,10 +31,9 @@
                 </Grid>
             </Border>
         </StackPanel>
-        
-        <ScrollViewer>
-            <Grid x:Name="packContentGrid" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="30, 40, 0, 0">
-            </Grid>
+
+        <ScrollViewer Margin="0,40,0,0">
+            <Grid x:Name="packContentGrid" VerticalAlignment="Stretch" HorizontalAlignment="Center" Margin="0,40,0,0"/>
         </ScrollViewer>
         
     </Grid>

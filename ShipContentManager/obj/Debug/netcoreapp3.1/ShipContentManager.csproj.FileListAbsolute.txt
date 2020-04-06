@@ -39,3 +39,4 @@ C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netc
 C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.dll
 C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.pdb
 C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.genruntimeconfig.cache
+C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.csprojAssemblyReference.cache
