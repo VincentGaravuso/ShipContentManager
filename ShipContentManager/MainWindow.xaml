@@ -20,7 +20,7 @@
         </Grid>
         <StackPanel Panel.ZIndex="2" Name="pnlLeftMenu" Orientation="Horizontal" HorizontalAlignment="Left" Margin="-120,40,0,0" VerticalAlignment="Stretch">
             <Border BorderBrush="#000000" BorderThickness="1" Width="150" Background="#474747">
-                <Grid>
+                <Grid x:Name="SlideTrayGrid" LostFocus="SlideTrayGrid_LostFocus">
                     <Button x:Name="btnPacks" HorizontalAlignment="Center" VerticalAlignment="Top" Width="148" Height="20" Margin="0,50,0,0" Visibility="Hidden" Content="Packs" Background="#363636" Click="btnPacks_Click" Foreground="White" BorderBrush="#FFE8175D" />
                     <Button x:Name="btnQuestions" HorizontalAlignment="Center" VerticalAlignment="Top" Width="148" Height="20" Margin="0,80,0,0" Visibility="Hidden" Content="Questions" Background="#363636" Click="btnQuestions_Click" Foreground="White" BorderBrush="#FFE8175D" />
                     <Grid HorizontalAlignment="Right" VerticalAlignment="Stretch">

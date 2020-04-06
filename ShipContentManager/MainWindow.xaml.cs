@@ -61,36 +61,6 @@ namespace ShipContentManager
 
         private void btnPacks_Click(object sender, RoutedEventArgs e)
         {
-            //int rowNumber = 0;
-            //int columnNumber = 0;
-            //packContentGrid.ColumnDefinitions.Clear();
-            ////for (int i = 0; i < 16; i++)
-            //{
-            //    PacksUserControl packsUserControl = new PacksUserControl();
-            //    packsUserControl.lblPackName.Content = $"Pack {i + 1}";
-            //    packsUserControl.lblDateCreated.Content = DateTime.Now.ToString("dd/MM/yyyy");
-            //    packsUserControl.Margin = new Thickness(10, 20, 0, 0);
-            //    //packsUserControl.HorizontalAlignment = HorizontalAlignment.Left;
-            //    //packsUserControl.VerticalAlignment = VerticalAlignment.Top;
-
-            //    if (columnNumber == 3)
-            //    {
-            //        columnNumber = 0;
-            //        rowNumber++;
-            //    }
-            //    RowDefinition rowDefinition = new RowDefinition();
-            //    packContentGrid.RowDefinitions.Add(rowDefinition);
-            //    rowDefinition.Height = GridLength.Auto;
-            //    Grid.SetRow(packsUserControl, rowNumber);
-            //    ColumnDefinition columnDefinition = new ColumnDefinition();
-            //    packContentGrid.ColumnDefinitions.Add(columnDefinition);
-            //    columnDefinition.Width = GridLength.Auto;
-            //    Grid.SetColumn(packsUserControl, columnNumber);
-
-            //    packContentGrid.Children.Add(packsUserControl);
-            //    columnNumber++;
-            //}
-
             generatePacks();
         }
 
@@ -101,28 +71,30 @@ namespace ShipContentManager
 
         private void mainGrid_SizeChanged(object sender, SizeChangedEventArgs e)
         {
+            //On start - show packs screen
             generatePacks();
         }
 
         private void generatePacks()
         {
-
             int numOfColumns = getNumberOfColumns();
-
             int rowNumber = 0;
             int columnNumber = 0;
+
+            //Clear previous pack content
             packContentGrid.ColumnDefinitions.Clear();
             packContentGrid.RowDefinitions.Clear();
             packContentGrid.Children.Clear();
+
+            //TODO: Pull packs from DB
+
+            //Dynamically create packs and assign data
             for (int i = 0; i < 15; i++)
             {
                 PacksUserControl packsUserControl = new PacksUserControl();
                 packsUserControl.lblPackName.Content = $"Pack {i + 1}";
                 packsUserControl.lblDateCreated.Content = DateTime.Now.ToString("dd/MM/yyyy");
                 packsUserControl.Margin = new Thickness(20, 20, 0, 0);
-                //packsUserControl.HorizontalAlignment = HorizontalAlignment.Left;
-                //packsUserControl.VerticalAlignment = VerticalAlignment.Top;
-
                 if (columnNumber == numOfColumns)
                 {
                     columnNumber = 0;
@@ -144,8 +116,13 @@ namespace ShipContentManager
         private int getNumberOfColumns()
         {
             var mainGridWidth = mainGrid.ActualWidth;
-            var numberOfColumns = Convert.ToInt32(mainGridWidth / 250);
+            var numberOfColumns = Convert.ToInt32(mainGridWidth / 190);
             return numberOfColumns;
+        }
+
+        private void SlideTrayGrid_LostFocus(object sender, RoutedEventArgs e)
+        {
+            btnHamburger_Click(sender, e);
         }
     }
 }
