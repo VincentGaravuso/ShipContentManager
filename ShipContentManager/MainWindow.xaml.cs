@@ -23,7 +23,8 @@ namespace ShipContentManager
     /// </summary>
     public partial class MainWindow : Window
     {
-        private bool hamburgerMenuOpened = false;
+        private List<Pack> storedPacks;
+        private bool hamburgerMenuSwitch = true;
         public MainWindow()
         {
             InitializeComponent();
@@ -31,51 +32,70 @@ namespace ShipContentManager
 
         private void btnHamburger_Click(object sender, RoutedEventArgs e)
         {
-            if (hamburgerMenuOpened)
+            ShowHideMenu();
+        }
+        private void ShowHideMenu()
+        {
+            Storyboard sb;
+
+            if (hamburgerMenuSwitch)
             {
-                ShowHideMenu("sbHideHamburgerMenu", btnPacks, pnlLeftMenu);
-                hamburgerMenuOpened = false;
+                sb = Resources["sbShowHamburgerMenu"] as Storyboard; 
+                sb.Begin(pnlLeftMenu);
+                btnPacks.Visibility = System.Windows.Visibility.Visible;
+                btnQuestions.Visibility = System.Windows.Visibility.Visible;
+                hamburgerMenuSwitch = false;
             }
             else
             {
-                ShowHideMenu("sbShowHamburgerMenu", btnPacks, pnlLeftMenu);
-                hamburgerMenuOpened = true;
-            }
-        }
-        private void ShowHideMenu(string Storyboard, Button btnPacks, StackPanel pnl)
-        {
-            Storyboard sb = Resources[Storyboard] as Storyboard;
-            sb.Begin(pnl);
-
-            if (Storyboard.Contains("Show"))
-            {
-                btnPacks.Visibility = System.Windows.Visibility.Visible;
-                btnQuestions.Visibility = System.Windows.Visibility.Visible;
-            }
-            else if (Storyboard.Contains("Hide"))
-            {
+                sb = Resources["sbHideHamburgerMenu"] as Storyboard;
+                sb.Begin(pnlLeftMenu);
                 btnPacks.Visibility = Visibility.Hidden;
                 btnQuestions.Visibility = Visibility.Hidden;
+                hamburgerMenuSwitch = true;
             }
         }
 
         private void btnPacks_Click(object sender, RoutedEventArgs e)
         {
-            generatePacks();
+            //Query Db for packs and store to Global list
+            storedPacks = queryForPacks();
+            generatePacks(storedPacks);
         }
 
         private void btnQuestions_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void mainGrid_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             //On start - show packs screen
-            generatePacks();
+            if(storedPacks != null)
+            {
+                generatePacks(storedPacks);
+            }
+            else
+            {
+                //Query Db for packs and store to Global list
+                storedPacks = queryForPacks();
+                generatePacks(storedPacks);
+            }
         }
-
-        private void generatePacks()
+        private List<Pack> queryForPacks()
+        {
+            //Querying database for list
+            List<Pack> packs = new List<Pack>();
+            for (int i = 0; i < 15; i++)
+            {
+                Pack p = new Pack();
+                p.Name = $"Pack {i}";
+                p.IsMiniPack = true;
+                packs.Add(p);
+            }
+            return packs;
+        }
+        private void generatePacks(List<Pack> packs)
         {
             int numOfColumns = getNumberOfColumns();
             int rowNumber = 0;
@@ -87,11 +107,12 @@ namespace ShipContentManager
             packContentGrid.Children.Clear();
 
             //TODO: Pull packs from DB
-
+            //TODO: Change to wrap panel
             //Dynamically create packs and assign data
             for (int i = 0; i < 15; i++)
             {
                 PacksUserControl packsUserControl = new PacksUserControl();
+                //TODO: Encapsulate
                 packsUserControl.lblPackName.Content = $"Pack {i + 1}";
                 packsUserControl.lblDateCreated.Content = DateTime.Now.ToString("dd/MM/yyyy");
                 packsUserControl.Margin = new Thickness(20, 20, 0, 0);
@@ -122,7 +143,12 @@ namespace ShipContentManager
 
         private void SlideTrayGrid_LostFocus(object sender, RoutedEventArgs e)
         {
-            btnHamburger_Click(sender, e);
+            //If menu is open
+            if(!hamburgerMenuSwitch)
+            {
+                //Hide menu
+                ShowHideMenu();
+            }
         }
     }
 }
