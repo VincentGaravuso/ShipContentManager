@@ -30,6 +30,12 @@ namespace ShipContentManager.Services
                 q.DateCreated = DateTime.Now;
                 q.Packs.Add(storedPacks.ElementAt(random.Next(0, storedPacks.Count())));
                 q.Packs.Add(storedPacks.ElementAt(random.Next(0, storedPacks.Count())));
+                q.Packs.Add(storedPacks.ElementAt(random.Next(0, storedPacks.Count())));
+                q.Packs.Add(storedPacks.ElementAt(random.Next(0, storedPacks.Count())));
+                q.Packs.Add(storedPacks.ElementAt(random.Next(0, storedPacks.Count())));
+                q.Packs.Add(storedPacks.ElementAt(random.Next(0, storedPacks.Count())));
+                q.Packs.Add(storedPacks.ElementAt(random.Next(0, storedPacks.Count())));
+                q.Packs.Add(storedPacks.ElementAt(random.Next(0, storedPacks.Count())));
                 storedQuestions.Add(q);
             }
             return storedQuestions;

@@ -78,7 +78,7 @@ namespace ShipContentManager
                 questionControl.SetQuestionNumberLabel(questionCount.ToString());
                 questionControl.SetQuestionTextLabel(question.QuestionText);
                 questionControl.SetDateCreatedLabel(question.DateCreatedToString());
-                questionControl.SetPacksLabel(question.Packs);
+                questionControl.SetPacks(question.Packs);
                 questionControl.Margin = new Thickness(10, 10, 0, 0);
 
                 contentWrapPanel.Children.Add(questionControl);

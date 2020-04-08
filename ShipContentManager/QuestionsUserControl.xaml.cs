@@ -22,6 +22,7 @@ namespace ShipContentManager
         public QuestionsUserControl()
         {
             InitializeComponent();
+            
         }
         public void SetQuestionNumberLabel(string questionNumber)
         {
@@ -44,14 +45,11 @@ namespace ShipContentManager
                 lblDateCreated.Content = dateCreated;
             }
         }
-        public void SetPacksLabel(List<Pack> packs)
+        public void SetPacks(List<Pack> packs)
         {
-            if(packs.Count > 0)
+            foreach (Pack p in packs)
             {
-                foreach(Pack pack in packs)
-                {
-                    lblPackNames.Content = pack.Name;
-                }
+                checkedListBox.Items.Add(p.Name);
             }
         }
     }

@@ -5,13 +5,30 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ShipContentManager"
              mc:Ignorable="d" 
-             Height="150" Width="250">
-    <Grid Background="#474747">
-        <Grid Margin="0,0,0,125" Background="#FFE8175D">
+             Height="212" Width="265">
+    <Grid Background="#474747" Margin="0,0,0,0">
+        <Grid Margin="0,0,0,120" Background="#FFE8175D" Height="30" VerticalAlignment="Top">
             <Label x:Name="lblQuestionNumber" Foreground="Black" Content="&lt;Question Number&gt;" HorizontalAlignment="Center" VerticalAlignment="Center" />
         </Grid>
-        <TextBlock x:Name="txtblockQuestionText" Text="&lt;Question Text&gt;" TextWrapping="Wrap" Margin="5,30,5,68" Foreground="White"/>
-        <Label x:Name="lblDateCreated" Content="Date Created" Margin="0,127,0,0" VerticalAlignment="Top" Foreground="White" FontSize="10" HorizontalContentAlignment="Left"/>
-        <Label x:Name="lblPackNames" Content="Pack Names" Margin="0,104,0,0" VerticalAlignment="Top" Foreground="White" FontSize="10" HorizontalContentAlignment="Left"/>
+        <TextBlock x:Name="txtblockQuestionText" Text="&lt;Question Text&gt;" TextWrapping="Wrap" Margin="5,35,5,101" Foreground="White"/>
+        <Label x:Name="lblDateCreated" Content="Date Created" Margin="0,153,0,0" VerticalAlignment="Bottom" Foreground="White" FontSize="10" HorizontalContentAlignment="Right"/>
+        <ListBox x:Name="checkedListBox" Margin="5,116,125,4"
+                 SelectionMode="Multiple" Background="#474747">
+            <ListBox.Resources>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="OverridesDefaultStyle" Value="true" />
+                    <Setter Property="SnapsToDevicePixels" Value="true" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListBoxItem">
+                                <CheckBox Margin="5,2">
+                                    <ContentPresenter />
+                                </CheckBox>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListBox.Resources>
+        </ListBox>
     </Grid>
 </UserControl>
