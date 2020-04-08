@@ -18,8 +18,8 @@ namespace ShipContentManager
         public MainWindow()
         {
             InitializeComponent();
-            var type = ContentEnumerations.CreateContentType.Pack;
-            renderContentCreateBtn(type);
+            var contentType = ContentEnumerations.CreateContentType.Pack;
+            renderContentCreateBtn(contentType);
         }
 
         private void btnHamburger_Click(object sender, RoutedEventArgs e)
@@ -52,15 +52,15 @@ namespace ShipContentManager
         {
             //Query Db for packs and store to Global list
             displayPacks(ContentManagerDataService.GetPacksFromServer());
-            var type = ContentEnumerations.CreateContentType.Pack;
-            renderContentCreateBtn(type);
+            var contentType = ContentEnumerations.CreateContentType.Pack;
+            renderContentCreateBtn(contentType);
         }
 
         private void btnQuestions_Click(object sender, RoutedEventArgs e)
         {
             displayQuestions(ContentManagerDataService.GetQuestionsFromServer());
-            var type = ContentEnumerations.CreateContentType.Question;
-            renderContentCreateBtn(type);
+            var contentType = ContentEnumerations.CreateContentType.Question;
+            renderContentCreateBtn(contentType);
         }
 
         private void renderContentCreateBtn(ContentEnumerations.CreateContentType content)
