@@ -10,9 +10,8 @@
         <Grid Margin="0,0,0,125" Background="#FFE8175D">
             <Label x:Name="lblQuestionNumber" Foreground="Black" Content="&lt;Question Number&gt;" HorizontalAlignment="Center" VerticalAlignment="Center" />
         </Grid>
-        <TextBlock x:Name="txtblockQuestionText" Text="&lt;Question Text&gt;" TextWrapping="Wrap" Margin="0,25,0,68" Foreground="White"/>
-        <Label x:Name="lblQuestionText" Content="Date Created" Margin="0,127,0,0" VerticalAlignment="Top" Foreground="White" FontSize="10" HorizontalContentAlignment="Left"/>
-        <Label x:Name="lblDateCreated_Copy" Margin="0,25,0,0" VerticalAlignment="Top" Foreground="White" FontSize="10" HorizontalContentAlignment="Left" Height="57"/>
-        <Label x:Name="lblPackName" Content="Pack Name" Margin="0,104,0,0" VerticalAlignment="Top" Foreground="White" FontSize="10" HorizontalContentAlignment="Left"/>
+        <TextBlock x:Name="txtblockQuestionText" Text="&lt;Question Text&gt;" TextWrapping="Wrap" Margin="5,30,5,68" Foreground="White"/>
+        <Label x:Name="lblDateCreated" Content="Date Created" Margin="0,127,0,0" VerticalAlignment="Top" Foreground="White" FontSize="10" HorizontalContentAlignment="Left"/>
+        <Label x:Name="lblPackNames" Content="Pack Names" Margin="0,104,0,0" VerticalAlignment="Top" Foreground="White" FontSize="10" HorizontalContentAlignment="Left"/>
     </Grid>
 </UserControl>

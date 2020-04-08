@@ -22,5 +22,24 @@ namespace ShipContentManager
         {
             InitializeComponent();
         }
+
+        public void SetPackNameLabelText(string packName)
+        {
+            if (!string.IsNullOrEmpty(packName))
+            {
+                lblPackName.Content = packName;
+            }
+        }
+        public void SetDateCreatedLabelText(string dateCreated)
+        {
+            if(!string.IsNullOrEmpty(dateCreated))
+            {
+                lblDateCreated.Content = dateCreated;
+            }
+        }
+        public void SetIsMiniPackCheckbox(bool isMiniPack)
+        {
+            checkboxIsMiniPack.IsChecked = isMiniPack;
+        }
     }
 }

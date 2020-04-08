@@ -9,7 +9,7 @@
         <Grid Margin="0,0,0,76" Background="#FFE8175D">
             <Label x:Name="lblPackName" Foreground="Black" Content="&lt;Pack Name&gt;" HorizontalAlignment="Center" VerticalAlignment="Center" />
         </Grid>
-        <CheckBox Content="Is Mini Pack" HorizontalAlignment="Stretch" Margin="0,29,0,0" VerticalAlignment="Top" Foreground="White" FontSize="10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+        <CheckBox x:Name="checkboxIsMiniPack" Content="Is Mini Pack" HorizontalAlignment="Stretch" Margin="0,29,0,0" VerticalAlignment="Top" Foreground="White" FontSize="10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
         <Label x:Name="lblDateCreated" Content="Date Created" HorizontalAlignment="Stretch" Margin="0,44,0,0" VerticalAlignment="Top" Foreground="White" FontSize="10" HorizontalContentAlignment="Left"/>
     </Grid>
 </UserControl>

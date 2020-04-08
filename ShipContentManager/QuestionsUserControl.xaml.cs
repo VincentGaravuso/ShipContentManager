@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ShipContentManager.Models;
 
 namespace ShipContentManager
 {
@@ -21,6 +22,37 @@ namespace ShipContentManager
         public QuestionsUserControl()
         {
             InitializeComponent();
+        }
+        public void SetQuestionNumberLabel(string questionNumber)
+        {
+            if (!string.IsNullOrEmpty(questionNumber))
+            {
+                lblQuestionNumber.Content = questionNumber;
+            }
+        }
+        public void SetQuestionTextLabel(string questionText)
+        {
+            if (!string.IsNullOrEmpty(questionText))
+            {
+                txtblockQuestionText.Text = questionText;
+            }
+        }
+        public void SetDateCreatedLabel(string dateCreated)
+        {
+            if (!string.IsNullOrEmpty(dateCreated))
+            {
+                lblDateCreated.Content = dateCreated;
+            }
+        }
+        public void SetPacksLabel(List<Pack> packs)
+        {
+            if(packs.Count > 0)
+            {
+                foreach(Pack pack in packs)
+                {
+                    lblPackNames.Content = pack.Name;
+                }
+            }
         }
     }
 }

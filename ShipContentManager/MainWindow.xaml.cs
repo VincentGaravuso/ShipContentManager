@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using System.Windows.Media.Animation;
 using System.Threading;
 using System.Reflection;
+using ShipContentManager.Models;
+using ShipContentManager.Services;
 
 namespace ShipContentManager
 {
@@ -23,7 +25,6 @@ namespace ShipContentManager
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<Pack> storedPacks;
         private bool hamburgerMenuSwitch = true;
         public MainWindow()
         {
@@ -59,95 +60,66 @@ namespace ShipContentManager
         private void btnPacks_Click(object sender, RoutedEventArgs e)
         {
             //Query Db for packs and store to Global list
-            storedPacks = queryForPacks();
-            generatePacks(storedPacks);
+            displayPacks(ContentManagerService.GetPacksFromDb());
         }
 
         private void btnQuestions_Click(object sender, RoutedEventArgs e)
         {
-            
+            displayQuestions(ContentManagerService.GetQuestionsFromDb());
+        }
+        private void displayQuestions(List<Question> questions)
+        {
+            contentWrapPanel.Children.Clear();
+            int questionCount = 0;
+            foreach(Question question in questions)
+            {
+                questionCount++;
+                QuestionsUserControl questionControl = new QuestionsUserControl();
+                questionControl.SetQuestionNumberLabel(questionCount.ToString());
+                questionControl.SetQuestionTextLabel(question.QuestionText);
+                questionControl.SetDateCreatedLabel(question.DateCreatedToString());
+                questionControl.SetPacksLabel(question.Packs);
+                questionControl.Margin = new Thickness(10, 10, 0, 0);
+
+                contentWrapPanel.Children.Add(questionControl);
+            }
         }
 
-        private void mainGrid_SizeChanged(object sender, SizeChangedEventArgs e)
+        private void displayPacks(List<Pack> packs)
+        {
+            contentWrapPanel.Children.Clear();
+            foreach(Pack pack in packs)
+            {
+                PacksUserControl packControl = new PacksUserControl();
+                packControl.SetPackNameLabelText(pack.Name);
+                packControl.SetDateCreatedLabelText(pack.DateCreatedToString());
+                packControl.SetIsMiniPackCheckbox(pack.IsMiniPack);
+                packControl.Margin = new Thickness(10, 10, 0, 0);
+
+                contentWrapPanel.Children.Add(packControl);
+            }
+        }
+        private void MainWindowScrollView_GotFocus(object sender, RoutedEventArgs e)
+        {
+            //If menu is open
+            if (!hamburgerMenuSwitch)
+            {
+                //Hide menu
+                ShowHideMenu();
+            }
+        }
+
+        private void mainGrid_Initialized(object sender, EventArgs e)
         {
             //On start - show packs screen
-            if(storedPacks != null)
+            if(ContentManagerService.GetStoredPacks() != null)
             {
-                generatePacks(storedPacks);
+                displayPacks(ContentManagerService.GetPacksFromDb());
             }
             else
             {
                 //Query Db for packs and store to Global list
-                storedPacks = queryForPacks();
-                generatePacks(storedPacks);
-            }
-        }
-        private List<Pack> queryForPacks()
-        {
-            //Querying database for list
-            List<Pack> packs = new List<Pack>();
-            for (int i = 0; i < 15; i++)
-            {
-                Pack p = new Pack();
-                p.Name = $"Pack {i}";
-                p.IsMiniPack = true;
-                packs.Add(p);
-            }
-            return packs;
-        }
-        private void generatePacks(List<Pack> packs)
-        {
-            int numOfColumns = getNumberOfColumns();
-            int rowNumber = 0;
-            int columnNumber = 0;
-
-            //Clear previous pack content
-            packContentGrid.ColumnDefinitions.Clear();
-            packContentGrid.RowDefinitions.Clear();
-            packContentGrid.Children.Clear();
-
-            //TODO: Pull packs from DB
-            //TODO: Change to wrap panel
-            //Dynamically create packs and assign data
-            for (int i = 0; i < 15; i++)
-            {
-                PacksUserControl packsUserControl = new PacksUserControl();
-                //TODO: Encapsulate
-                packsUserControl.lblPackName.Content = $"Pack {i + 1}";
-                packsUserControl.lblDateCreated.Content = DateTime.Now.ToString("dd/MM/yyyy");
-                packsUserControl.Margin = new Thickness(20, 20, 0, 0);
-                if (columnNumber == numOfColumns)
-                {
-                    columnNumber = 0;
-                    rowNumber++;
-                }
-                RowDefinition rowDefinition = new RowDefinition();
-                packContentGrid.RowDefinitions.Add(rowDefinition);
-                rowDefinition.Height = GridLength.Auto;
-                Grid.SetRow(packsUserControl, rowNumber);
-                ColumnDefinition columnDefinition = new ColumnDefinition();
-                packContentGrid.ColumnDefinitions.Add(columnDefinition);
-                columnDefinition.Width = GridLength.Auto;
-                Grid.SetColumn(packsUserControl, columnNumber);
-
-                packContentGrid.Children.Add(packsUserControl);
-                columnNumber++;
-            }
-        }
-        private int getNumberOfColumns()
-        {
-            var mainGridWidth = mainGrid.ActualWidth;
-            var numberOfColumns = Convert.ToInt32(mainGridWidth / 190);
-            return numberOfColumns;
-        }
-
-        private void SlideTrayGrid_LostFocus(object sender, RoutedEventArgs e)
-        {
-            //If menu is open
-            if(!hamburgerMenuSwitch)
-            {
-                //Hide menu
-                ShowHideMenu();
+                displayPacks(ContentManagerService.GetStoredPacks());
             }
         }
     }
