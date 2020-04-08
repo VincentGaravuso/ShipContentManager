@@ -43,8 +43,8 @@ namespace ShipContentManager
             {
                 sb = Resources["sbShowHamburgerMenu"] as Storyboard; 
                 sb.Begin(pnlLeftMenu);
-                btnPacks.Visibility = System.Windows.Visibility.Visible;
-                btnQuestions.Visibility = System.Windows.Visibility.Visible;
+                btnPacks.Visibility = Visibility.Visible;
+                btnQuestions.Visibility = Visibility.Visible;
                 hamburgerMenuSwitch = false;
             }
             else
