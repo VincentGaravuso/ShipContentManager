@@ -1,20 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Media.Animation;
-using System.Threading;
-using System.Reflection;
 using ShipContentManager.Models;
 using ShipContentManager.Services;
 
@@ -29,6 +18,8 @@ namespace ShipContentManager
         public MainWindow()
         {
             InitializeComponent();
+            var type = ContentEnumerations.CreateContentType.Pack;
+            renderContentCreateBtn(type);
         }
 
         private void btnHamburger_Click(object sender, RoutedEventArgs e)
@@ -61,12 +52,56 @@ namespace ShipContentManager
         {
             //Query Db for packs and store to Global list
             displayPacks(ContentManagerDataService.GetPacksFromServer());
+            var type = ContentEnumerations.CreateContentType.Pack;
+            renderContentCreateBtn(type);
         }
 
         private void btnQuestions_Click(object sender, RoutedEventArgs e)
         {
             displayQuestions(ContentManagerDataService.GetQuestionsFromServer());
+            var type = ContentEnumerations.CreateContentType.Question;
+            renderContentCreateBtn(type);
         }
+
+        private void renderContentCreateBtn(ContentEnumerations.CreateContentType content)
+        {
+            Button createButton = new Button();
+            BrushConverter bc = new BrushConverter();
+            createButton.VerticalAlignment = VerticalAlignment.Top;
+            createButton.HorizontalAlignment = HorizontalAlignment.Right;
+            createButton.Width = 100;
+            createButton.Background = (Brush)bc.ConvertFrom("#474747");
+            createButton.Foreground = Brushes.White;
+
+            if (content == ContentEnumerations.CreateContentType.Question)
+            {
+                createButton.Content = "Create Question";
+                createButton.Click += createQuestionsBtn_Click;
+            }
+            else if (content == ContentEnumerations.CreateContentType.Pack)
+            {
+                createButton.Content = "Create Pack";
+                createButton.Click += CreatePackButton_Click; ;
+            }
+            mainGrid.Children.Remove(createButton);
+            mainGrid.Children.Add(createButton);
+        }
+
+        private void CreatePackButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window createPackWindow = new Window();
+            createPackWindow.Title = "Create Pack";
+
+            createPackWindow.Show();
+        }
+
+        private void createQuestionsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Window createQuestionWindow = new Window();
+            createQuestionWindow.Title = "Create Question";
+            createQuestionWindow.Show();
+        }
+
         private void displayQuestions(List<Question> questions)
         {
             contentWrapPanel.Children.Clear();
