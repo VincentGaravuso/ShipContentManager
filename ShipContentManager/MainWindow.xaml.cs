@@ -60,12 +60,12 @@ namespace ShipContentManager
         private void btnPacks_Click(object sender, RoutedEventArgs e)
         {
             //Query Db for packs and store to Global list
-            displayPacks(ContentManagerService.GetPacksFromDb());
+            displayPacks(ContentManagerDataService.GetPacksFromServer());
         }
 
         private void btnQuestions_Click(object sender, RoutedEventArgs e)
         {
-            displayQuestions(ContentManagerService.GetQuestionsFromDb());
+            displayQuestions(ContentManagerDataService.GetQuestionsFromServer());
         }
         private void displayQuestions(List<Question> questions)
         {
@@ -80,7 +80,6 @@ namespace ShipContentManager
                 questionControl.SetDateCreatedLabel(question.DateCreatedToString());
                 questionControl.SetPacks(question.Packs);
                 questionControl.Margin = new Thickness(10, 10, 0, 0);
-
                 contentWrapPanel.Children.Add(questionControl);
             }
         }
@@ -95,7 +94,6 @@ namespace ShipContentManager
                 packControl.SetDateCreatedLabelText(pack.DateCreatedToString());
                 packControl.SetIsMiniPackCheckbox(pack.IsMiniPack);
                 packControl.Margin = new Thickness(10, 10, 0, 0);
-
                 contentWrapPanel.Children.Add(packControl);
             }
         }
@@ -112,14 +110,14 @@ namespace ShipContentManager
         private void mainGrid_Initialized(object sender, EventArgs e)
         {
             //On start - show packs screen
-            if(ContentManagerService.GetStoredPacks() != null)
+            if(ContentManagerDataService.GetLocalPacks() != null)
             {
-                displayPacks(ContentManagerService.GetPacksFromDb());
+                displayPacks(ContentManagerDataService.GetPacksFromServer());
             }
             else
             {
                 //Query Db for packs and store to Global list
-                displayPacks(ContentManagerService.GetStoredPacks());
+                displayPacks(ContentManagerDataService.GetLocalPacks());
             }
         }
     }

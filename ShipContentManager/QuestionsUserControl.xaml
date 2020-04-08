@@ -13,7 +13,7 @@
         <TextBlock x:Name="txtblockQuestionText" Text="&lt;Question Text&gt;" TextWrapping="Wrap" Margin="5,35,5,101" Foreground="White"/>
         <Label x:Name="lblDateCreated" Content="Date Created" Margin="0,153,0,0" VerticalAlignment="Bottom" Foreground="White" FontSize="10" HorizontalContentAlignment="Right"/>
         <ListBox x:Name="checkedListBox" Margin="5,116,125,4"
-                 SelectionMode="Multiple" Background="#474747">
+                 SelectionMode="Multiple" Foreground="White">
             <ListBox.Resources>
                 <Style TargetType="ListBoxItem">
                     <Setter Property="OverridesDefaultStyle" Value="true" />
