@@ -8,6 +8,7 @@ namespace ShipContentManager.Models
     {
         public string QuestionText { get; set; }
         public DateTime DateCreated { get; set; }
+        public string QuestionObjectId { get; set; }
         public List<Pack> Packs { get; set; }
         public Question()
         {

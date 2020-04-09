@@ -9,6 +9,7 @@ namespace ShipContentManager.Models
         public string Name { get; set; }
         public DateTime DateCreated { get; set; }
         public bool IsMiniPack { get; set; }
+        public string PackObjectId { get; set; }
 
 
         public string DateCreatedToString()

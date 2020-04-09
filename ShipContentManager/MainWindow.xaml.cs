@@ -71,7 +71,7 @@ namespace ShipContentManager
             createButton.VerticalAlignment = VerticalAlignment.Top;
             createButton.HorizontalAlignment = HorizontalAlignment.Right;
             createButton.Width = 100;
-            createButton.Background = (Brush)bc.ConvertFrom("#474747");
+            createButton.Background = (Brush)bc.ConvertFrom("#3466AA");
             createButton.Foreground = Brushes.White;
 
             if (content == ContentEnumerations.CreateContentType.Question)
