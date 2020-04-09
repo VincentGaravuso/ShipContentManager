@@ -4,15 +4,15 @@
 winexe
 C#
 .cs
-C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Release\netcoreapp3.1\
 ShipContentManager
 none
 false
-TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
+TRACE;RELEASE;NETCOREAPP;NETCOREAPP3_1
 C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\App.xaml
 3-1480952372
 
-9146022537
+10-1748396816
 195957520164
 MainWindow.xaml;PacksUserControl.xaml;QuestionsUserControl.xaml;
 

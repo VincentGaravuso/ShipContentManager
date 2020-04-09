@@ -7,11 +7,28 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\hamburger.png" />
+    <None Remove="Images\editIcon.png" />
+    <None Remove="Images\hamburgerIcon.png" />
+    <None Remove="Images\packIcon.png" />
+    <None Remove="Images\questionIcon.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\hamburger.png">
+    <PackageReference Include="AdonisUI" Version="1.14.0" />
+    <PackageReference Include="AdonisUI.ClassicTheme" Version="1.14.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\editIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\hamburgerIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\packIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\questionIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

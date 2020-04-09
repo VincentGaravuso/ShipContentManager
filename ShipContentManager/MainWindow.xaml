@@ -16,23 +16,26 @@
         </Storyboard>
     </Window.Resources>
     <Grid x:Name="mainGrid" Initialized="mainGrid_Initialized">
-        <Grid Background="#e8175d" VerticalAlignment="Top" Height="40">
+        <Grid Background="#114084" VerticalAlignment="Top" Height="40">
         </Grid>
         <StackPanel Panel.ZIndex="2" Name="pnlLeftMenu" Orientation="Horizontal" HorizontalAlignment="Left" Margin="-120,40,0,0" VerticalAlignment="Stretch">
-            <Border BorderBrush="#000000" BorderThickness="1" Width="150" Background="#474747">
+            <Border BorderThickness="0" Width="150" Background="#FF1C1C1C">
+                <Border.Effect>
+                    <DropShadowEffect Color="Black" BlurRadius="12" ShadowDepth="1" Direction="315" RenderingBias="Performance" />
+                </Border.Effect>
                 <Grid x:Name="SlideTrayGrid">
-                    <Button x:Name="btnPacks" HorizontalAlignment="Center" VerticalAlignment="Top" Width="148" Height="20" Margin="0,50,0,0" Visibility="Hidden" Content="Packs" Background="#363636" Click="btnPacks_Click" Foreground="White" BorderBrush="#FFE8175D" />
-                    <Button x:Name="btnQuestions" HorizontalAlignment="Center" VerticalAlignment="Top" Width="148" Height="20" Margin="0,80,0,0" Visibility="Hidden" Content="Questions" Background="#363636" Click="btnQuestions_Click" Foreground="White" BorderBrush="#FFE8175D" />
+                    <Button x:Name="btnPacks" HorizontalAlignment="Center" VerticalAlignment="Top" Width="148" Height="20" Margin="0,50,0,0" Visibility="Hidden" Content="Packs" Background="#FF1C1C1C" Click="btnPacks_Click" Foreground="White" BorderBrush="{x:Null}" HorizontalContentAlignment="Right" />
+                    <Button x:Name="btnQuestions" HorizontalAlignment="Center" VerticalAlignment="Top" Width="148" Height="20" Margin="0,80,0,0" Visibility="Hidden" Content="Questions" Background="#FF1C1C1C" Click="btnQuestions_Click" Foreground="White" BorderBrush="{x:Null}" HorizontalContentAlignment="Right" />
                     <Grid HorizontalAlignment="Right" VerticalAlignment="Stretch">
                         <Button x:Name="btnHamburger" Width="30" Height="30" Click="btnHamburger_Click" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}">
-                            <Image Source="/Images/hamburger.png" Width="24" Height="24" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                            <Image Source="/Images/hamburgerIcon.png" Width="24" Height="24" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
                         </Button>
                     </Grid>
                 </Grid>
             </Border>
         </StackPanel>
 
-        <ScrollViewer x:Name="MainWindowScrollView" Margin="30,40,0,0" GotFocus="MainWindowScrollView_GotFocus">
+        <ScrollViewer x:Name="MainWindowScrollView" Margin="30,40,0,0" GotFocus="MainWindowScrollView_GotFocus" Background="#FFDADADA">
             <WrapPanel x:Name="contentWrapPanel"/>
         </ScrollViewer>
 

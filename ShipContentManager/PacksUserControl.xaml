@@ -4,12 +4,22 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ShipContentManager"
-             mc:Ignorable="d" Height="100" Width="150">
-    <Grid Background="#474747">
-        <Grid Margin="0,0,0,76" Background="#FFE8175D">
-            <Label x:Name="lblPackName" Foreground="Black" Content="&lt;Pack Name&gt;" HorizontalAlignment="Center" VerticalAlignment="Center" />
+             mc:Ignorable="d" Height="152" Width="205">
+    <Grid Background="#FFF1F1F1">
+        <Grid.Effect>
+            <DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="1" Direction="315" RenderingBias="Performance" Opacity="1" />
+        </Grid.Effect>
+        <Grid Margin="0,0,0,76" Background="#FF3466AA" VerticalAlignment="Top">
+            <Button x:Name="btnHamburger" Width="30" Height="30" VerticalAlignment="Center" HorizontalAlignment="Right" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,0,2,0">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Images/editIcon.png" Stretch="None"/>
+                </Button.Background>
+
+            </Button>
+            <Label x:Name="lblPackName" Foreground="#FFF1F1F1" Content="&lt;Pack Name&gt;" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="18" />
         </Grid>
-        <CheckBox x:Name="checkboxIsMiniPack" Content="Is Mini Pack" HorizontalAlignment="Stretch" Margin="0,29,0,0" VerticalAlignment="Top" Foreground="White" FontSize="10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
-        <Label x:Name="lblDateCreated" Content="Date Created" HorizontalAlignment="Stretch" Margin="0,44,0,0" VerticalAlignment="Top" Foreground="White" FontSize="10" HorizontalContentAlignment="Left"/>
+        <CheckBox x:Name="checkboxIsMiniPack" Content="Is Mini Pack" Margin="0,39,0,0" VerticalAlignment="Top" Foreground="#FF1C1C1C" FontSize="16" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="#FF1C1C1C" BorderBrush="Gray" FontWeight="Normal"/>
+        <Label x:Name="lblDateCreated" Content="Date Created" Margin="0,129,0,0" VerticalAlignment="Top" Foreground="#FF1C1C1C" HorizontalContentAlignment="Right" FontWeight="Normal"/>
+
     </Grid>
 </UserControl>

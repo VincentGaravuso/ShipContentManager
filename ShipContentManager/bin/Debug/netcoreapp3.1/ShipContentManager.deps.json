@@ -7,8 +7,46 @@
   "targets": {
     ".NETCoreApp,Version=v3.1": {
       "ShipContentManager/1.0.0": {
+        "dependencies": {
+          "AdonisUI": "1.14.0",
+          "AdonisUI.ClassicTheme": "1.14.0"
+        },
         "runtime": {
           "ShipContentManager.dll": {}
+        }
+      },
+      "AdonisUI/1.14.0": {
+        "dependencies": {
+          "System.Drawing.Common": "4.6.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/AdonisUI.dll": {
+            "assemblyVersion": "1.14.0.0",
+            "fileVersion": "1.14.0.0"
+          }
+        }
+      },
+      "AdonisUI.ClassicTheme/1.14.0": {
+        "dependencies": {
+          "AdonisUI": "1.14.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/AdonisUI.ClassicTheme.dll": {
+            "assemblyVersion": "1.14.0.0",
+            "fileVersion": "1.14.0.0"
+          }
+        }
+      },
+      "Microsoft.NETCore.Platforms/3.0.0": {},
+      "Microsoft.Win32.SystemEvents/4.6.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.0.0"
+        }
+      },
+      "System.Drawing.Common/4.6.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.0.0",
+          "Microsoft.Win32.SystemEvents": "4.6.0"
         }
       }
     }
@@ -18,6 +56,41 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AdonisUI/1.14.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2CUUEuzZOcI0JSMok/TXW+8YYRHgqprOSyRq/UcqL6DFIbkRAf8PylLmVlK0TG++ubTVtbiPXMCenuMFw08BVg==",
+      "path": "adonisui/1.14.0",
+      "hashPath": "adonisui.1.14.0.nupkg.sha512"
+    },
+    "AdonisUI.ClassicTheme/1.14.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zkQ8YAXB08unySAGY2q6EEe0Zpxz1bxaU3v5k+FtX8ksh42POB9GIFNAfmxEBI9MrLHFcvqiF0BqLj2gQ68cXQ==",
+      "path": "adonisui.classictheme/1.14.0",
+      "hashPath": "adonisui.classictheme.1.14.0.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Platforms/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TsETIgVJb/AKoYfSP+iCxkuly5d3inZjTdx/ItZLk2CxY85v8083OBS3uai84kK3/baLnS5/b5XGs6zR7SuuHQ==",
+      "path": "microsoft.netcore.platforms/3.0.0",
+      "hashPath": "microsoft.netcore.platforms.3.0.0.nupkg.sha512"
+    },
+    "Microsoft.Win32.SystemEvents/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Edg+pFW5C8WJb680Za2kTV8TqUi6Ahl/WldRVoOVJ23UQLpDHFspa+umgFjkWZw24ETsU99Cg+ErZz683M4chg==",
+      "path": "microsoft.win32.systemevents/4.6.0",
+      "hashPath": "microsoft.win32.systemevents.4.6.0.nupkg.sha512"
+    },
+    "System.Drawing.Common/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2A3spjjoPZnvpVh/sDTzd+0H8ZqTdr+hH/6obB8MMfG81EJ85PmxCKDBxhBVQiA25PliKAZ1sKogDcq9mSnFEA==",
+      "path": "system.drawing.common/4.6.0",
+      "hashPath": "system.drawing.common.4.6.0.nupkg.sha512"
     }
   }
 }

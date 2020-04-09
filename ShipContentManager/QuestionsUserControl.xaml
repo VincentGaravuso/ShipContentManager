@@ -6,14 +6,22 @@
              xmlns:local="clr-namespace:ShipContentManager"
              mc:Ignorable="d" 
              Height="212" Width="265">
-    <Grid Background="#474747" Margin="0,0,0,0">
-        <Grid Margin="0,0,0,120" Background="#FFE8175D" Height="30" VerticalAlignment="Top">
-            <Label x:Name="lblQuestionNumber" Foreground="Black" Content="&lt;Question Number&gt;" HorizontalAlignment="Center" VerticalAlignment="Center" />
+    <Grid Background="#F1F1F1" Margin="0,0,0,0">
+        <Grid.Effect>
+            <DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="1" Direction="315" RenderingBias="Performance" Opacity="1" />
+        </Grid.Effect>
+        <Grid Margin="0,0,0,120" Background="#3466AA" VerticalAlignment="Top">
+            <Button x:Name="btnHamburger" Width="30" Height="30" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,2,0" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Images/editIcon.png" Stretch="None"/>
+                </Button.Background>
+            </Button>
+            <Label x:Name="lblQuestionNumber" Foreground="#FFF1F1F1" Content="&lt;Question Number&gt;" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" />
         </Grid>
-        <TextBlock x:Name="txtblockQuestionText" Text="&lt;Question Text&gt;" TextWrapping="Wrap" Margin="5,35,5,101" Foreground="White"/>
-        <Label x:Name="lblDateCreated" Content="Date Created" Margin="0,153,0,0" VerticalAlignment="Bottom" Foreground="White" FontSize="10" HorizontalContentAlignment="Right"/>
-        <ListBox x:Name="checkedListBox" Margin="5,116,125,4"
-                 SelectionMode="Multiple" Foreground="White">
+        <TextBlock x:Name="txtblockQuestionText" Text="&lt;Question Text&gt;" TextWrapping="Wrap" Margin="5,39,5,101" Foreground="#FF1C1C1C" FontWeight="Normal" FontSize="16"/>
+        <Label x:Name="lblDateCreated" Content="Date Created" Margin="0,153,0,0" VerticalAlignment="Bottom" Foreground="#FF1C1C1C" HorizontalContentAlignment="Right" FontWeight="Normal"/>
+        <ListBox x:Name="checkedListBox" Margin="5,116,89,4"
+                 SelectionMode="Multiple" Foreground="#FF1C1C1C" BorderBrush="#FFD8D8D8" Background="#FFF1F1F1" FontWeight="Bold">
             <ListBox.Resources>
                 <Style TargetType="ListBoxItem">
                     <Setter Property="OverridesDefaultStyle" Value="true" />
