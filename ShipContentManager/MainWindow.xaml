@@ -23,13 +23,23 @@
                     <DropShadowEffect Color="Black" BlurRadius="12" ShadowDepth="1" Direction="315" RenderingBias="Performance" />
                 </Border.Effect>
                 <Grid x:Name="SlideTrayGrid">
-                    <Button x:Name="btnPacks" HorizontalAlignment="Center" VerticalAlignment="Top" Width="148" Height="20" Margin="0,50,0,0" Visibility="Hidden" Content="Packs" Background="#FF1C1C1C" Click="btnPacks_Click" Foreground="White" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" />
-                    <Button x:Name="btnQuestions" HorizontalAlignment="Center" VerticalAlignment="Top" Width="148" Height="20" Margin="0,80,0,0" Visibility="Hidden" Content="Questions" Background="#FF1C1C1C" Click="btnQuestions_Click" Foreground="White" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" />
-                    <Grid HorizontalAlignment="Right" VerticalAlignment="Stretch">
-                        <Button x:Name="btnHamburger" Width="30" Height="30" Click="btnHamburger_Click" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}">
+                    <StackPanel>
+                        <Button x:Name="btnHamburger" Width="30" Height="30" Click="btnHamburger_Click" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right">
                             <Image Source="/Images/hamburgerIcon.png" Width="24" Height="24" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
                         </Button>
-                    </Grid>
+                        <Button x:Name="btnPacks" HorizontalAlignment="Center" VerticalAlignment="Top" Width="148" Height="50" Margin="0,0,0,0" Background="{x:Null}" Click="btnPacks_Click" Foreground="White" BorderBrush="{x:Null}" HorizontalContentAlignment="Left">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/Images/packIcon.png" Width="24" Height="24" HorizontalAlignment="Left" VerticalAlignment="Center"></Image>
+                                <Label Content="Packs" Foreground="White" VerticalContentAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="btnQuestions" HorizontalAlignment="Center" VerticalAlignment="Top" Width="148" Height="50" Margin="0,0,0,0" Background="{x:Null}" Click="btnQuestions_Click" Foreground="White" BorderBrush="{x:Null}" HorizontalContentAlignment="Left">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <Image Source="/Images/questionIcon.png" Width="24" Height="24" HorizontalAlignment="Left" VerticalAlignment="Center"></Image>
+                                <Label Content="Questions" Foreground="White" VerticalContentAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
                 </Grid>
             </Border>
         </StackPanel>

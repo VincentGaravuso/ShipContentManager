@@ -23,7 +23,6 @@ C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\bin\Debug\netc
 C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.csproj.CopyComplete
 C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\AdonisUI.ClassicTheme.dll
 C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.csproj.CoreCompileInputs.cache
-C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.csprojAssemblyReference.cache
 C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\ShipContentManager.exe
 C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\ShipContentManager.deps.json
 C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\ShipContentManager.runtimeconfig.json
@@ -50,3 +49,4 @@ C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\ShipContentManager\obj\
 C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.dll
 C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.pdb
 C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.genruntimeconfig.cache
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.csprojAssemblyReference.cache

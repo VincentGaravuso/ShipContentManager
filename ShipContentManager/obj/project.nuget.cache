@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "/gQ3CrDXrWgnAm6jhh8QQmwZBygtK3+klLrlDzrbc2FKuGB8/ZAWbVE/1LcHk4Nj0SpH64tOMaDfRi3n08oyhg==",
+  "dgSpecHash": "QXoCOU9FWMO+R1zos5ZqyUQfWNp5F88Ek9Jya0ySbwGxuoMyOnj6BEaYWK2L738sqgp/nQpNyTXEBWIL3dmjPg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jawad Ahsan\\Documents\\GitHub\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj",
+  "projectFilePath": "C:\\Users\\vinny\\source\\repos\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Jawad Ahsan\\.nuget\\packages\\adonisui\\1.14.0\\adonisui.1.14.0.nupkg.sha512",
-    "C:\\Users\\Jawad Ahsan\\.nuget\\packages\\adonisui.classictheme\\1.14.0\\adonisui.classictheme.1.14.0.nupkg.sha512",
-    "C:\\Users\\Jawad Ahsan\\.nuget\\packages\\microsoft.netcore.platforms\\3.0.0\\microsoft.netcore.platforms.3.0.0.nupkg.sha512",
-    "C:\\Users\\Jawad Ahsan\\.nuget\\packages\\microsoft.win32.systemevents\\4.6.0\\microsoft.win32.systemevents.4.6.0.nupkg.sha512",
-    "C:\\Users\\Jawad Ahsan\\.nuget\\packages\\system.drawing.common\\4.6.0\\system.drawing.common.4.6.0.nupkg.sha512"
+    "C:\\Users\\vinny\\.nuget\\packages\\adonisui\\1.14.0\\adonisui.1.14.0.nupkg.sha512",
+    "C:\\Users\\vinny\\.nuget\\packages\\adonisui.classictheme\\1.14.0\\adonisui.classictheme.1.14.0.nupkg.sha512",
+    "C:\\Users\\vinny\\.nuget\\packages\\microsoft.netcore.platforms\\3.0.0\\microsoft.netcore.platforms.3.0.0.nupkg.sha512",
+    "C:\\Users\\vinny\\.nuget\\packages\\microsoft.win32.systemevents\\4.6.0\\microsoft.win32.systemevents.4.6.0.nupkg.sha512",
+    "C:\\Users\\vinny\\.nuget\\packages\\system.drawing.common\\4.6.0\\system.drawing.common.4.6.0.nupkg.sha512"
   ],
   "logs": []
 }
