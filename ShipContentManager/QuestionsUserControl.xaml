@@ -29,7 +29,7 @@
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="ListBoxItem">
-                                <CheckBox Margin="5,2">
+                                <CheckBox Margin="5,2" IsEnabled="False">
                                     <ContentPresenter />
                                 </CheckBox>
                             </ControlTemplate>

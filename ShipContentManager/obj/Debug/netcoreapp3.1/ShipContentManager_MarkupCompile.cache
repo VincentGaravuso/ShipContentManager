@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\App.xaml
-3-1480952372
+41333102033
 
-9146022537
+10-1903751355
 195957520164
-MainWindow.xaml;PacksUserControl.xaml;QuestionsUserControl.xaml;
+CreateQuestionWindow.xaml;MainWindow.xaml;PacksUserControl.xaml;QuestionsUserControl.xaml;
 
 False
 

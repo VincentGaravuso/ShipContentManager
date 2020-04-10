@@ -18,7 +18,7 @@
             </Button>
             <Label x:Name="lblPackName" Foreground="#FFF1F1F1" Content="&lt;Pack Name&gt;" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="18" />
         </Grid>
-        <CheckBox x:Name="checkboxIsMiniPack" Content="Is Mini Pack" Margin="0,39,0,0" VerticalAlignment="Top" Foreground="#FF1C1C1C" FontSize="16" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="#FF1C1C1C" BorderBrush="Gray" FontWeight="Normal"/>
+        <CheckBox x:Name="checkboxIsMiniPack" Content="Is Mini Pack" Margin="0,39,0,0" VerticalAlignment="Top" Foreground="#FF1C1C1C" FontSize="16" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="#FFF1F1F1" BorderBrush="Gray" FontWeight="Normal" IsEnabled="False"/>
         <Label x:Name="lblDateCreated" Content="Date Created" Margin="0,129,0,0" VerticalAlignment="Top" Foreground="#FF1C1C1C" HorizontalContentAlignment="Right" FontWeight="Normal"/>
 
     </Grid>

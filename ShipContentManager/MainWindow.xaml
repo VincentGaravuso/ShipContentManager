@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShipContentManager"
         mc:Ignorable="d"
-        Title="Ship Content Manager" Height="602" Width="950">
+        Title="Ship Content Manager" Height="602" Width="950" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Storyboard x:Key="sbShowHamburgerMenu" >
             <ThicknessAnimation Storyboard.TargetProperty="Margin" From="-120,40,0,0" To="0,40,0,0" DecelerationRatio=".9" Duration="0:0:0.3" />
@@ -27,16 +27,16 @@
                         <Button x:Name="btnHamburger" Width="30" Height="30" Click="btnHamburger_Click" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right">
                             <Image Source="/Images/hamburgerIcon.png" Width="24" Height="24" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
                         </Button>
-                        <Button x:Name="btnPacks" HorizontalAlignment="Center" VerticalAlignment="Top" Width="148" Height="50" Margin="0,0,0,0" Background="{x:Null}" Click="btnPacks_Click" Foreground="White" BorderBrush="{x:Null}" HorizontalContentAlignment="Left">
+                        <Button x:Name="btnPacks" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0" Background="{x:Null}" Click="btnPacks_Click" Foreground="White" BorderBrush="{x:Null}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Width="150" Height="49">
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="/Images/packIcon.png" Width="24" Height="24" HorizontalAlignment="Left" VerticalAlignment="Center"></Image>
-                                <Label Content="Packs" Foreground="White" VerticalContentAlignment="Center"/>
+                                <Label Content="Packs" Foreground="White" VerticalContentAlignment="Center" Width="122"/>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnQuestions" HorizontalAlignment="Center" VerticalAlignment="Top" Width="148" Height="50" Margin="0,0,0,0" Background="{x:Null}" Click="btnQuestions_Click" Foreground="White" BorderBrush="{x:Null}" HorizontalContentAlignment="Left">
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Button x:Name="btnQuestions" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0" Background="{x:Null}" Click="btnQuestions_Click" Foreground="White" BorderBrush="{x:Null}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Height="50">
+                            <StackPanel Orientation="Horizontal">
                                 <Image Source="/Images/questionIcon.png" Width="24" Height="24" HorizontalAlignment="Left" VerticalAlignment="Center"></Image>
-                                <Label Content="Questions" Foreground="White" VerticalContentAlignment="Center"/>
+                                <Label Content="Questions" Foreground="White" VerticalContentAlignment="Center" Width="122" HorizontalContentAlignment="Left" HorizontalAlignment="Stretch"/>
                             </StackPanel>
                         </Button>
                     </StackPanel>
@@ -44,7 +44,7 @@
             </Border>
         </StackPanel>
         <ScrollViewer x:Name="MainWindowScrollView" Margin="30,40,0,0" GotFocus="MainWindowScrollView_GotFocus" Background="#FFDADADA">
-            <WrapPanel x:Name="contentWrapPanel"/>
+            <WrapPanel x:Name="contentWrapPanel" HorizontalAlignment="Center"/>
         </ScrollViewer>
     </Grid>
 </Window>

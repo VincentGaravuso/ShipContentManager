@@ -1,28 +1,3 @@
-C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\ShipContentManager.exe
-C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\ShipContentManager.deps.json
-C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\ShipContentManager.runtimeconfig.json
-C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\ShipContentManager.runtimeconfig.dev.json
-C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\ShipContentManager.dll
-C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\ShipContentManager.pdb
-C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\MainWindow.g.cs
-C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\PacksUserControl.g.cs
-C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\App.g.cs
-C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager_MarkupCompile.cache
-C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager_MarkupCompile.lref
-C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\MainWindow.baml
-C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\PacksUserControl.baml
-C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.g.resources
-C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.AssemblyInfoInputs.cache
-C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.AssemblyInfo.cs
-C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.dll
-C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.pdb
-C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.genruntimeconfig.cache
-C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\QuestionsUserControl.g.cs
-C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\QuestionsUserControl.baml
-C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\AdonisUI.dll
-C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.csproj.CopyComplete
-C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\AdonisUI.ClassicTheme.dll
-C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.csproj.CoreCompileInputs.cache
 C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\ShipContentManager.exe
 C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\ShipContentManager.deps.json
 C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\ShipContentManager.runtimeconfig.json
@@ -49,4 +24,31 @@ C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\ShipContentManager\obj\
 C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.dll
 C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.pdb
 C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.genruntimeconfig.cache
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\ShipContentManager.exe
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\ShipContentManager.deps.json
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\ShipContentManager.runtimeconfig.json
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\ShipContentManager.runtimeconfig.dev.json
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\ShipContentManager.dll
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\ShipContentManager.pdb
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\AdonisUI.dll
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\AdonisUI.ClassicTheme.dll
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\CreateQuestionWindow.g.cs
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\PacksUserControl.g.cs
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\QuestionsUserControl.g.cs
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager_MarkupCompile.cache
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager_MarkupCompile.lref
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\CreateQuestionWindow.baml
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\PacksUserControl.baml
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\QuestionsUserControl.baml
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.g.resources
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.csproj.CoreCompileInputs.cache
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.AssemblyInfoInputs.cache
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.AssemblyInfo.cs
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.csproj.CopyComplete
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.dll
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.pdb
+C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.genruntimeconfig.cache
 C:\Users\vinny\source\repos\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.csprojAssemblyReference.cache

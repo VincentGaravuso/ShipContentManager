@@ -19,7 +19,7 @@ namespace ShipContentManager
         public MainWindow()
         {
             InitializeComponent();
-            var contentType = ContentEnumerations.CreateContentType.Pack;
+            var contentType = CreateContentType.Pack;
             renderContentCreateBtn(contentType);
         }
 
@@ -53,18 +53,18 @@ namespace ShipContentManager
         {
             //Query Db for packs and store to Global list
             displayPacks(ContentManagerDataService.GetPacksFromServer());
-            var contentType = ContentEnumerations.CreateContentType.Pack;
+            var contentType = CreateContentType.Pack;
             renderContentCreateBtn(contentType);
         }
 
         private void btnQuestions_Click(object sender, RoutedEventArgs e)
         {
             displayQuestions(ContentManagerDataService.GetQuestionsFromServer());
-            var contentType = ContentEnumerations.CreateContentType.Question;
+            var contentType = CreateContentType.Question;
             renderContentCreateBtn(contentType);
         }
 
-        private void renderContentCreateBtn(ContentEnumerations.CreateContentType content)
+        private void renderContentCreateBtn(CreateContentType content)
         {
             Button createButton = new Button();
             BrushConverter bc = new BrushConverter();
@@ -74,12 +74,12 @@ namespace ShipContentManager
             createButton.Background = (Brush)bc.ConvertFrom("#3466AA");
             createButton.Foreground = Brushes.White;
 
-            if (content == ContentEnumerations.CreateContentType.Question)
+            if (content == CreateContentType.Question)
             {
                 createButton.Content = "Create Question";
                 createButton.Click += createQuestionsBtn_Click;
             }
-            else if (content == ContentEnumerations.CreateContentType.Pack)
+            else if (content == CreateContentType.Pack)
             {
                 createButton.Content = "Create Pack";
                 createButton.Click += CreatePackButton_Click; ;
@@ -90,16 +90,12 @@ namespace ShipContentManager
 
         private void CreatePackButton_Click(object sender, RoutedEventArgs e)
         {
-            Window createPackWindow = new Window();
-            createPackWindow.Title = "Create Pack";
-
-            createPackWindow.Show();
+            
         }
 
         private void createQuestionsBtn_Click(object sender, RoutedEventArgs e)
         {
-            Window createQuestionWindow = new Window();
-            createQuestionWindow.Title = "Create Question";
+            CreateQuestionWindow createQuestionWindow = new CreateQuestionWindow();
             createQuestionWindow.Show();
         }
 
