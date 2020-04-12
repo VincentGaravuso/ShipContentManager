@@ -18,6 +18,7 @@ namespace ShipContentManager
         private bool hamburgerMenuSwitch = true;
         public MainWindow()
         {
+            ContentManagerDataService.InitializeShipClientService(); 
             InitializeComponent();
             var contentType = CreateContentType.Pack;
             renderContentCreateBtn(contentType);
@@ -49,21 +50,21 @@ namespace ShipContentManager
             }
         }
 
-        private void btnPacks_Click(object sender, RoutedEventArgs e)
+        private async void btnPacks_Click(object sender, RoutedEventArgs e)
         {
             //Query Db for packs and store to Global list
-            displayPacks(ContentManagerDataService.GetPacksFromServer());
+            displayPacks(await ContentManagerDataService.GetPacksFromServer());
             var contentType = CreateContentType.Pack;
             renderContentCreateBtn(contentType);
         }
 
-        private void btnQuestions_Click(object sender, RoutedEventArgs e)
+        private async void btnQuestions_Click(object sender, RoutedEventArgs e)
         {
-            displayQuestions(ContentManagerDataService.GetQuestionsFromServer());
+            displayQuestions(await ContentManagerDataService.GetQuestionsFromServer());
             var contentType = CreateContentType.Question;
             renderContentCreateBtn(contentType);
         }
-
+        //get rid of this shit
         private void renderContentCreateBtn(CreateContentType content)
         {
             Button createButton = new Button();
@@ -110,7 +111,7 @@ namespace ShipContentManager
                 questionControl.SetQuestionNumberLabel(questionCount.ToString());
                 questionControl.SetQuestionTextLabel(question.QuestionText);
                 questionControl.SetDateCreatedLabel(question.DateCreatedToString());
-                questionControl.SetPacks(question.Packs);
+                questionControl.SetPacks(ContentManagerDataService.GetLocalPacks(), question.Packs);
                 questionControl.Margin = new Thickness(10, 10, 0, 0);
                 contentWrapPanel.Children.Add(questionControl);
             }
@@ -139,12 +140,12 @@ namespace ShipContentManager
             }
         }
 
-        private void mainGrid_Initialized(object sender, EventArgs e)
+        private async void mainGrid_Initialized(object sender, EventArgs e)
         {
             //On start - show packs screen
             if(ContentManagerDataService.GetLocalPacks() != null)
             {
-                displayPacks(ContentManagerDataService.GetPacksFromServer());
+                displayPacks(await ContentManagerDataService.GetPacksFromServer());
             }
             else
             {

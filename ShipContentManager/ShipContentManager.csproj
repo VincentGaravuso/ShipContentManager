@@ -16,6 +16,12 @@
   <ItemGroup>
     <PackageReference Include="AdonisUI" Version="1.14.0" />
     <PackageReference Include="AdonisUI.ClassicTheme" Version="1.14.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Shared_ShipContentManager\Shared_ShipContentManager.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,15 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
+﻿using System.Collections.Generic;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using ShipContentManager.Models;
 
 namespace ShipContentManager
@@ -45,11 +35,17 @@ namespace ShipContentManager
                 lblDateCreated.Content = dateCreated;
             }
         }
-        public void SetPacks(List<Pack> packs)
+        public void SetPacks(List<Pack> packs, List<string> packObjectIds)
         {
-            foreach (Pack p in packs)
+            foreach (var q in packObjectIds)
             {
-                checkedListBox.Items.Add(p.Name);
+                foreach (var p in packs)
+                {
+                    if (q == p.PackObjectId)
+                    {
+                        checkedListBox.Items.Add(p.Name);
+                    }
+                }
             }
         }
     }

@@ -1,19 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Diagnostics.CodeAnalysis;
+using Newtonsoft.Json;
 
 namespace ShipContentManager.Models
 {
     public class Question
     {
-        public string QuestionText { get; set; }
-        public DateTime DateCreated { get; set; }
+        [JsonProperty("objectId")]
         public string QuestionObjectId { get; set; }
-        public List<Pack> Packs { get; set; }
-        public Question()
-        {
-            Packs = new List<Pack>();
-        }
+        [JsonProperty("questionText")]
+        public string QuestionText { get; set; }
+        [JsonProperty(null), AllowNull]
+        public DateTime DateCreated { get; set; }
+        [JsonProperty("packObjectIds")]
+        public List<string> Packs { get; set; }
+
         public string DateCreatedToString()
         {
             return DateCreated.ToString("dd/MM/yyyy");
