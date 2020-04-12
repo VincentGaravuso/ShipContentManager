@@ -93,7 +93,7 @@ namespace ShipContentManager {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ShipContentManager;component/questionsusercontrol.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ShipContentManager_r0wosys0_wpftmp;component/questionsusercontrol.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\QuestionsUserControl.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
