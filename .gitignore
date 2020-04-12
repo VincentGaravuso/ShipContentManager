@@ -35,3 +35,6 @@ ShipContentManager/obj/Release/netcoreapp3.1/ShipContentManager.assets.cache
 ShipContentManager/obj/Release/netcoreapp3.1/ShipContentManager_MarkupCompile.cache
 ShipContentManager/obj/Release/netcoreapp3.1/ShipContentManager_MarkupCompile.lref
 ShipContentManager/obj/ShipContentManager.csproj.nuget.dgspec.json
+ShipContentManager/obj
+ShipContentManager/Debug
+ShipContentManager/obj/Debug
