@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QXoCOU9FWMO+R1zos5ZqyUQfWNp5F88Ek9Jya0ySbwGxuoMyOnj6BEaYWK2L738sqgp/nQpNyTXEBWIL3dmjPg==",
+  "dgSpecHash": "MRaIaDTDKaVG4rXRbW8mTjXPB2zsG5uFNrD7plh0Pvzd6SSM4uNMNK7+5ngB4FSf94+/4YSF5qeCwVmbL9l5GQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vinny\\source\\repos\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj",
+  "projectFilePath": "C:\\Users\\vinny\\Documents\\GitHub\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vinny\\.nuget\\packages\\adonisui\\1.14.0\\adonisui.1.14.0.nupkg.sha512",
     "C:\\Users\\vinny\\.nuget\\packages\\adonisui.classictheme\\1.14.0\\adonisui.classictheme.1.14.0.nupkg.sha512",

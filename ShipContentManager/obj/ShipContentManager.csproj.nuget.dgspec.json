@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vinny\\source\\repos\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj": {}
+    "C:\\Users\\vinny\\Documents\\GitHub\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vinny\\source\\repos\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj": {
+    "C:\\Users\\vinny\\Documents\\GitHub\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vinny\\source\\repos\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj",
+        "projectUniqueName": "C:\\Users\\vinny\\Documents\\GitHub\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj",
         "projectName": "ShipContentManager",
-        "projectPath": "C:\\Users\\vinny\\source\\repos\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj",
+        "projectPath": "C:\\Users\\vinny\\Documents\\GitHub\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj",
         "packagesPath": "C:\\Users\\vinny\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vinny\\source\\repos\\ShipContentManager\\ShipContentManager\\obj\\",
+        "outputPath": "C:\\Users\\vinny\\Documents\\GitHub\\ShipContentManager\\ShipContentManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
