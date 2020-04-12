@@ -19,7 +19,7 @@ namespace ShipContentManager
     {
         public CreateQuestionWindow()
         {
-         //test
+         //test2
             InitializeComponent();
         }
     }
