@@ -4,17 +4,13 @@
 winexe
 C#
 .cs
-C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\
 ShipContentManager
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\ShipContentManager\App.xaml
 41333102033
-
-10-1903751355
-2081292379704
 CreateQuestionWindow.xaml;MainWindow.xaml;PacksUserControl.xaml;QuestionsUserControl.xaml;
 
-False
+True
 

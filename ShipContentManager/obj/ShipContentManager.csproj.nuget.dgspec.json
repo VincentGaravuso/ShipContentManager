@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jawad Ahsan\\Documents\\GitHub\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj": {}
+    "C:\\Users\\vinny\\Documents\\GitHub\\VincentGaravuso\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jawad Ahsan\\Documents\\GitHub\\ShipContentManager\\Shared_ShipContentManager\\Shared_ShipContentManager.csproj": {
+    "C:\\Users\\vinny\\Documents\\GitHub\\VincentGaravuso\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jawad Ahsan\\Documents\\GitHub\\ShipContentManager\\Shared_ShipContentManager\\Shared_ShipContentManager.csproj",
-        "projectName": "Shared_ShipContentManager",
-        "projectPath": "C:\\Users\\Jawad Ahsan\\Documents\\GitHub\\ShipContentManager\\Shared_ShipContentManager\\Shared_ShipContentManager.csproj",
-        "packagesPath": "C:\\Users\\Jawad Ahsan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jawad Ahsan\\Documents\\GitHub\\ShipContentManager\\Shared_ShipContentManager\\obj\\",
+        "projectUniqueName": "C:\\Users\\vinny\\Documents\\GitHub\\VincentGaravuso\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj",
+        "projectName": "ShipContentManager",
+        "projectPath": "C:\\Users\\vinny\\Documents\\GitHub\\VincentGaravuso\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj",
+        "packagesPath": "C:\\Users\\vinny\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vinny\\Documents\\GitHub\\VincentGaravuso\\ShipContentManager\\ShipContentManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
