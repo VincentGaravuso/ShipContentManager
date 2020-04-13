@@ -5,7 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Effects;
-using ShipContentManager.Models;
+using Shared_ShipContentManager.Models;
 using ShipContentManager.Services;
 
 namespace ShipContentManager
@@ -18,7 +18,6 @@ namespace ShipContentManager
         private bool hamburgerMenuSwitch = true;
         public MainWindow()
         {
-            ContentManagerDataService.InitializeShipClientService(); 
             InitializeComponent();
             var contentType = CreateContentType.Pack;
             renderContentCreateBtn(contentType);
@@ -100,7 +99,7 @@ namespace ShipContentManager
             createQuestionWindow.Show();
         }
 
-        private void displayQuestions(List<Question> questions)
+        private  void displayQuestions(List<Question> questions)
         {
             contentWrapPanel.Children.Clear();
             int questionCount = 0;

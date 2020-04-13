@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace Shared_ShipContentManager
+namespace Shared_ShipContentManager.Models
 {
         public class Authentication
         {

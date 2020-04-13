@@ -18,7 +18,7 @@
             </Button>
             <Label x:Name="lblQuestionNumber" Foreground="#FFF1F1F1" Content="&lt;Question Number&gt;" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" />
         </Grid>
-        <TextBlock x:Name="txtblockQuestionText" Text="&lt;Question Text&gt;" TextWrapping="Wrap" Margin="5,39,5,101" Foreground="#FF1C1C1C" FontWeight="Normal" FontSize="16"/>
+        <TextBlock x:Name="txtblockQuestionText" Text="&lt;Question Text&gt;" TextWrapping="Wrap" Margin="5,39,5,101" Foreground="#FF1C1C1C" FontWeight="Normal" FontSize="16" Height="Auto" />
         <Label x:Name="lblDateCreated" Content="Date Created" Margin="0,153,0,0" VerticalAlignment="Bottom" Foreground="#FF1C1C1C" HorizontalContentAlignment="Right" FontWeight="Normal"/>
         <ListBox x:Name="checkedListBox" Margin="5,116,89,4"
                  SelectionMode="Multiple" Foreground="#FF1C1C1C" BorderBrush="#FFD8D8D8" Background="#FFF1F1F1" FontWeight="Bold">
@@ -29,7 +29,7 @@
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="ListBoxItem">
-                                <CheckBox Margin="5,2" IsEnabled="False">
+                                <CheckBox x:Name="checkBoxItem" Margin="5,2" IsEnabled="False" IsChecked="True">
                                     <ContentPresenter />
                                 </CheckBox>
                             </ControlTemplate>

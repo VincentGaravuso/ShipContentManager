@@ -1,6 +1,6 @@
 ﻿using System;
 using Newtonsoft.Json;
-namespace ShipContentManager.Models
+namespace Shared_ShipContentManager.Models
 {
     public class Pack
     {

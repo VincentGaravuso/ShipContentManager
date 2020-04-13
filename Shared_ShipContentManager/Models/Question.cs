@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using Newtonsoft.Json;
 
-namespace ShipContentManager.Models
+namespace Shared_ShipContentManager.Models
 {
     public class Question
     {
