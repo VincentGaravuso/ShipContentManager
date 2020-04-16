@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Effects;
+using Shared_ShipContentManager.Interfaces;
 using Shared_ShipContentManager.Models;
+using ShipContentManager;
 using ShipContentManager.Services;
 
 namespace ShipContentManager
@@ -16,13 +19,15 @@ namespace ShipContentManager
     public partial class MainWindow : Window
     {
         private bool hamburgerMenuSwitch = true;
-        public MainWindow()
+        private ContentManagerDataService dataService;
+        public MainWindow(){}
+        public MainWindow(IShipClientService clientService)
         {
+            dataService = new ContentManagerDataService(clientService);
             InitializeComponent();
             var contentType = CreateContentType.Pack;
             renderContentCreateBtn(contentType);
         }
-
         private void btnHamburger_Click(object sender, RoutedEventArgs e)
         {
             ShowHideMenu();
@@ -52,14 +57,14 @@ namespace ShipContentManager
         private async void btnPacks_Click(object sender, RoutedEventArgs e)
         {
             //Query Db for packs and store to Global list
-            displayPacks(await ContentManagerDataService.GetPacksFromServer());
+            displayPacks(await dataService.GetPacksFromServer());
             var contentType = CreateContentType.Pack;
             renderContentCreateBtn(contentType);
         }
 
         private async void btnQuestions_Click(object sender, RoutedEventArgs e)
         {
-            displayQuestions(await ContentManagerDataService.GetQuestionsFromServer());
+            displayQuestions(await dataService.GetQuestionsFromServer());
             var contentType = CreateContentType.Question;
             renderContentCreateBtn(contentType);
         }
@@ -110,7 +115,7 @@ namespace ShipContentManager
                 questionControl.SetQuestionNumberLabel(questionCount.ToString());
                 questionControl.SetQuestionTextLabel(question.QuestionText);
                 questionControl.SetDateCreatedLabel(question.DateCreatedToString());
-                questionControl.SetPacks(ContentManagerDataService.GetLocalPacks(), question.Packs);
+                questionControl.SetPacks(dataService.GetLocalPacks(), question.Packs);
                 questionControl.Margin = new Thickness(10, 10, 0, 0);
                 contentWrapPanel.Children.Add(questionControl);
             }
@@ -142,14 +147,14 @@ namespace ShipContentManager
         private async void mainGrid_Initialized(object sender, EventArgs e)
         {
             //On start - show packs screen
-            if(ContentManagerDataService.GetLocalPacks() != null)
+            if(dataService.GetLocalPacks() != null)
             {
-                displayPacks(await ContentManagerDataService.GetPacksFromServer());
+                displayPacks(await dataService.GetPacksFromServer());
             }
             else
             {
                 //Query Db for packs and store to Global list
-                displayPacks(ContentManagerDataService.GetLocalPacks());
+                displayPacks(dataService.GetLocalPacks());
             }
         }
     }

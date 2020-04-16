@@ -11,12 +11,12 @@ namespace Shared_ShipContentManager.Interfaces
 {
     public interface IShipClientService
     {
-        Task<Pack> SendCreatePackRequst(Pack pack);
-        Task<List<Pack>> SendGetPacksRequest();
-        Task<List<Question>> SendGetQuestionsRequest();
-        Task<Question> SendCreateQuestionRequst(Question question);
-        Task<Question> SendDeleteQuestionRequest(Question deletableQuestion);
-        Task<Pack> SendUpdatePackNameRequest(string packId, string PackName);
+        Task<Pack> CreatePack(Pack pack);
+        Task<List<Pack>> GetAllPacks();
+        Task<List<Question>> GetAllQuestions();
+        Task<Question> CreateQuestion(Question question);
+        Task<Question> DeleteQuestion(Question deletableQuestion);
+        Task<Pack> UpdatePackName(string packId, string PackName);
 
     }
 }

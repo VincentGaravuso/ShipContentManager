@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ServiceStack;
+using Shared_ShipContentManager.Interfaces;
 using Shared_ShipContentManager.Services;
 using ShipContentManager.Services;
 using System;
@@ -23,15 +24,26 @@ namespace ShipContentManager
     public partial class App : Application
     {
         private static ServiceProvider serviceProvider;
-        private static ShipClient shipClient;
-        protected override void OnStartup(StartupEventArgs e)
+        private static ServiceCollection serviceCollection;
+        private static HttpClient httpClient;
+        public App()
         {
-            serviceProvider = new ServiceCollection()
+            serviceCollection = new ServiceCollection();
+            httpClient = new HttpClient();
+            ConfigureServices(serviceCollection);
+            serviceProvider = serviceCollection.BuildServiceProvider();
+        }
+        private void App_OnStartup(object sender, StartupEventArgs e)
+        {
+            var mainWindow = serviceProvider.GetService<MainWindow>();
+            mainWindow.Show();
+        }
+        private void ConfigureServices(IServiceCollection services)
+        {
+            services
               .AddSingleton<HttpClient>()
-              .AddTransient<ShipClient>()
-              .BuildServiceProvider();
-            shipClient = serviceProvider.GetService<ShipClient>();
-            ContentManagerDataService.Init(shipClient);
+              .AddSingleton<IShipClientService>(x => new ShipClient(httpClient))
+              .AddSingleton<MainWindow>();
         }
     }
 }
