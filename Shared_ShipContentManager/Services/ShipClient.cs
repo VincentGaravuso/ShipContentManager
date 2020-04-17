@@ -1,20 +1,11 @@
-﻿using Microsoft.Extensions.Configuration;
-using Newtonsoft.Json;
-using ServiceStack;
+﻿using Newtonsoft.Json;
 using System;
-using System.Configuration;
 using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System.Net.Http.Headers;
 using Shared_ShipContentManager.Models;
 using Shared_ShipContentManager.Interfaces;
 using System.Collections.Generic;
-using System.Net;
-using System.Security.Cryptography;
-using ServiceStack.Text;
-using System.Text;
-using System.Xml.XPath;
 
 namespace Shared_ShipContentManager.Services
 {
@@ -34,16 +25,12 @@ namespace Shared_ShipContentManager.Services
         }
         public async Task<Pack> CreatePack(Pack pack)
         {
-            //var json = JsonConvert.SerializeObject(pack);
-            //var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
             var stringContent = DataFormatService.JsonToStringContent(pack);
             var response = await client.PostAsync("CreatePack", stringContent);
             if (response.IsSuccessStatusCode)
             {
-                //var responseString = await request.Content.ReadAsStringAsync();
                 var responseString = await DataFormatService.ResponseMessageToString(response);
-                var result = JsonConvert.DeserializeObject<Pack>(responseString);
-                return result;
+                return DataFormatService.JsonToModel<Pack>(responseString);
             }
             else
             {
@@ -52,15 +39,12 @@ namespace Shared_ShipContentManager.Services
         }
         public async Task<Question> CreateQuestion(Question question)
         {
-            //var json = JsonConvert.SerializeObject(question);
-            //var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
             var stringContent = DataFormatService.JsonToStringContent(question);
             var response = await client.PostAsync("CreateQuestion", stringContent);
             if (response.IsSuccessStatusCode)
             {
                 var responseString = await DataFormatService.ResponseMessageToString(response);
-                var result = JsonConvert.DeserializeObject<Question>(responseString);
-                return result;
+                return DataFormatService.JsonToModel<Question>(responseString);
             }
             else
             {
@@ -69,16 +53,12 @@ namespace Shared_ShipContentManager.Services
         }
         public async Task<Question> DeleteQuestion(Question questionId)
         {
-            //string json = JsonConvert.SerializeObject(questionId);
-            //var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
             var stringContent = DataFormatService.JsonToStringContent(questionId);
             var response = await client.PostAsync("DeleteQuestion", stringContent);
             if (response.IsSuccessStatusCode)
             {
-                //var responseString = await request.Content.ReadAsStringAsync();
                 var responseString = await DataFormatService.ResponseMessageToString(response);
-                var result = JsonConvert.DeserializeObject<Question>(responseString);
-                return result;
+                return DataFormatService.JsonToModel<Question>(responseString);
             }
             else
             {
@@ -90,9 +70,8 @@ namespace Shared_ShipContentManager.Services
             var response = await client.GetAsync("GetAllPacks");
             if (response.IsSuccessStatusCode)
             {
-                var responseString = await response.Content.ReadAsStringAsync();
-                var result = JsonConvert.DeserializeObject<List<Pack>>(responseString);
-                return result;
+                var responseString = await DataFormatService.ResponseMessageToString(response);
+                return DataFormatService.JsonToModel<List<Pack>>(responseString);
             }
             else
             {
@@ -104,10 +83,8 @@ namespace Shared_ShipContentManager.Services
             var response = await client.GetAsync("GetAllQuestions");
             if (response.IsSuccessStatusCode)
             {
-                //var responseString = await response.Content.ReadAsStringAsync();
                 var responseString = await DataFormatService.ResponseMessageToString(response);
-                var result = JsonConvert.DeserializeObject<List<Question>>(responseString);
-                return result;
+                return DataFormatService.JsonToModel<List<Question>>(responseString);
             }
             else
             {
@@ -117,16 +94,13 @@ namespace Shared_ShipContentManager.Services
         }
         public async Task<Pack> UpdatePackName(string packId, string packName)
         {
-            var requestString = JsonConvert.SerializeObject(new { packId, packName });
-            var stringContent = new StringContent(requestString, Encoding.UTF8, "application/json");
+            var stringContent = DataFormatService.JsonToStringContent(new { packId, packName });
             var response = await client.PutAsync("UpdatePackName", stringContent);
 
             if (response.IsSuccessStatusCode)
             {
-                //var responseString = await request.Content.ReadAsStringAsync();
                 var responseString = await DataFormatService.ResponseMessageToString(response);
-                var result = JsonConvert.DeserializeObject<Pack>(responseString);
-                return result;
+                return JsonConvert.DeserializeObject<Pack>(responseString);
             }
             else
             {

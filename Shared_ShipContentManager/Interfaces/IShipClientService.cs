@@ -1,10 +1,5 @@
-﻿using ServiceStack;
-using Shared_ShipContentManager.Models;
-using System;
+﻿using Shared_ShipContentManager.Models;
 using System.Collections.Generic;
-using System.Dynamic;
-using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Shared_ShipContentManager.Interfaces

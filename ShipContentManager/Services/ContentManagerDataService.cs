@@ -2,9 +2,6 @@
 using System.Threading.Tasks;
 using Shared_ShipContentManager.Models;
 using Shared_ShipContentManager.Interfaces;
-using Shared_ShipContentManager.Services;
-using ShipContentManager;
-using System.Runtime.CompilerServices;
 
 namespace ShipContentManager.Services
 {
@@ -12,8 +9,11 @@ namespace ShipContentManager.Services
     {
         private List<Question> storedLocalQuestions;
         private List<Pack> storedLocalPacks;
-        private IShipClientService shipService { get; set; } = new ShipClient();
-
+        private IShipClientService shipService;
+        public ContentManagerDataService(IShipClientService shipService)
+        {
+            this.shipService = shipService;
+        }
         public List<Question> GetLocalQuestions()
         {
             return storedLocalQuestions;
@@ -33,7 +33,6 @@ namespace ShipContentManager.Services
         public async Task<Question> CreateQuestion(Question question)
         {
             return await shipService.CreateQuestion(question);
-
         }
         public async Task<Pack> UpdatePack(string packId, string packName)
         {

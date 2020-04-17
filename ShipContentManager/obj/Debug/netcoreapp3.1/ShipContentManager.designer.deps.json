@@ -28,11 +28,15 @@
           }
         }
       },
-      "FontAwesome.WPF/4.7.0.9": {
+      "FontAwesome5/2.0.5": {
         "runtime": {
-          "lib/net40/FontAwesome.WPF.dll": {
-            "assemblyVersion": "4.7.0.37774",
-            "fileVersion": "4.7.0.9"
+          "lib/netcoreapp3.0/FontAwesome5.NetCore30.dll": {
+            "assemblyVersion": "2.0.5.0",
+            "fileVersion": "2.0.5.0"
+          },
+          "lib/netcoreapp3.0/FontAwesome5.dll": {
+            "assemblyVersion": "2.0.5.0",
+            "fileVersion": "2.0.5.0"
           }
         }
       },
@@ -417,12 +421,12 @@
       "path": "adonisui.classictheme/1.14.0",
       "hashPath": "adonisui.classictheme.1.14.0.nupkg.sha512"
     },
-    "FontAwesome.WPF/4.7.0.9": {
+    "FontAwesome5/2.0.5": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-SXE080rnyWMm9Dt0BZzMxh89/o9teuSaqL1N+0O/XM/F/HU8JuZA4XaEKxjBigwZPHHU3/udTa0QMYCHkmH43Q==",
-      "path": "fontawesome.wpf/4.7.0.9",
-      "hashPath": "fontawesome.wpf.4.7.0.9.nupkg.sha512"
+      "sha512": "sha512-aweNp8D8l7GWBmR7Wq8o4fFoAmgA8uuA/ZCPWPwx2y9mp8G7D2YFX2nvxiqxsT+9+AREwokF3CLi3cTO5IgvGw==",
+      "path": "fontawesome5/2.0.5",
+      "hashPath": "fontawesome5.2.0.5.nupkg.sha512"
     },
     "Microsoft.CSharp/4.5.0": {
       "type": "package",

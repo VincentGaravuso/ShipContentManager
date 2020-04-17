@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Effects;
 using Shared_ShipContentManager.Interfaces;
 using Shared_ShipContentManager.Models;
-using ShipContentManager;
 using ShipContentManager.Services;
-using FontAwesome.WPF;
 using Shared_ShipContentManager.Services;
 
 namespace ShipContentManager
@@ -20,38 +14,43 @@ namespace ShipContentManager
     /// </summary>
     public partial class MainWindow : Window
     {
+        private IShipClientService shipClientService;
+        private ContentManagerDataService dataService;
+        private bool hamburgerMenuSwitch = true;
+        private readonly Visibility hidden = Visibility.Hidden;
+        private readonly Visibility visible = Visibility.Visible;
         private const string AddQuestion = "ADD QUESTION";
         private const string AddPack = "ADD PACK";
-        private bool hamburgerMenuSwitch = true;
-
-        private ContentManagerDataService dataService;
         public MainWindow()
         {
-            dataService = new ContentManagerDataService();
+            shipClientService = new ShipClient();
+            dataService = new ContentManagerDataService(shipClientService);
             InitializeComponent();
+            btnPacks.Visibility = hidden;
+            btnQuestions.Visibility = hidden;
         }
         private void btnHamburger_Click(object sender, RoutedEventArgs e)
         {
             ShowHideMenu();
         }
         private void ShowHideMenu()
-        {
+        { 
             Storyboard sb;
 
             if (hamburgerMenuSwitch)
             {
                 sb = Resources["sbShowHamburgerMenu"] as Storyboard; 
                 sb.Begin(pnlLeftMenu);
-                btnPacks.Visibility = Visibility.Visible;
-                btnQuestions.Visibility = Visibility.Visible;
+                btnPacks.Visibility = visible;
+                btnQuestions.Visibility = visible;
                 hamburgerMenuSwitch = false;
             }
             else
             {
                 sb = Resources["sbHideHamburgerMenu"] as Storyboard;
                 sb.Begin(pnlLeftMenu);
-                btnPacks.Visibility = Visibility.Hidden;
-                btnQuestions.Visibility = Visibility.Hidden;
+                btnPacks.Visibility = hidden;
+                btnQuestions.Visibility = hidden;
                 hamburgerMenuSwitch = true;
             }
         }
@@ -77,7 +76,7 @@ namespace ShipContentManager
             displayQuestions(await dataService.GetQuestionsFromServer());
         }
 
-        private  void displayQuestions(List<Question> questions)
+        private void displayQuestions(List<Question> questions)
         {
             btnAddContent.ToolTip = AddQuestion;
             contentWrapPanel.Children.Clear();
@@ -139,7 +138,7 @@ namespace ShipContentManager
         {
             if(btnAddContent.ToolTip.ToString() == AddPack)
             {
-                CreatePackWindow createPackWindow= new CreatePackWindow();
+                CreatePackWindow createPackWindow = new CreatePackWindow();
                 createPackWindow.Show();
             }
             else

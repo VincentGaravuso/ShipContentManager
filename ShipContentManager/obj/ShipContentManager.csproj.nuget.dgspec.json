@@ -136,9 +136,9 @@
               "target": "Package",
               "version": "[1.14.0, )"
             },
-            "FontAwesome.WPF": {
+            "FontAwesome5": {
               "target": "Package",
-              "version": "[4.7.0.9, )"
+              "version": "[2.0.5, )"
             },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",

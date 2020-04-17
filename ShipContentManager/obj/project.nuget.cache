@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "NxruC4MX0iO13uRBYygiYdgeU5TcGBjF02R3OH/E2HaSbrTj0kr2NVTjK1FjA5W4aGL83pPc9vqUifiEWQ/Row==",
+  "dgSpecHash": "/wzAYOcc9ZIPnnMDxSE8cFqdjD/hGQ99LxkzKmcFooAZC8996DjH8fF8s31xVuaiwGC/GgabivsxEvwj2C7vog==",
   "success": true,
   "projectFilePath": "C:\\Users\\Jawad Ahsan\\Documents\\GitHub\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jawad Ahsan\\.nuget\\packages\\adonisui\\1.14.0\\adonisui.1.14.0.nupkg.sha512",
     "C:\\Users\\Jawad Ahsan\\.nuget\\packages\\adonisui.classictheme\\1.14.0\\adonisui.classictheme.1.14.0.nupkg.sha512",
-    "C:\\Users\\Jawad Ahsan\\.nuget\\packages\\fontawesome.wpf\\4.7.0.9\\fontawesome.wpf.4.7.0.9.nupkg.sha512",
+    "C:\\Users\\Jawad Ahsan\\.nuget\\packages\\fontawesome5\\2.0.5\\fontawesome5.2.0.5.nupkg.sha512",
     "C:\\Users\\Jawad Ahsan\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Jawad Ahsan\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.3\\microsoft.extensions.configuration.3.1.3.nupkg.sha512",
     "C:\\Users\\Jawad Ahsan\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.3\\microsoft.extensions.configuration.abstractions.3.1.3.nupkg.sha512",
@@ -41,16 +41,5 @@
     "C:\\Users\\Jawad Ahsan\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\Jawad Ahsan\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'FontAwesome.WPF 4.7.0.9' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
-      "libraryId": "FontAwesome.WPF",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  "logs": []
 }
