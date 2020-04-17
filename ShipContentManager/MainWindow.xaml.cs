@@ -28,7 +28,6 @@ namespace ShipContentManager
         public MainWindow()
         {
             dataService = new ContentManagerDataService();
-
             InitializeComponent();
         }
         private void btnHamburger_Click(object sender, RoutedEventArgs e)

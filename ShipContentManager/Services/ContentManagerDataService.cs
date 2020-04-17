@@ -12,11 +12,8 @@ namespace ShipContentManager.Services
     {
         private List<Question> storedLocalQuestions;
         private List<Pack> storedLocalPacks;
-        private ShipClientService shipClientService;
-        public ContentManagerDataService()
-        {
-            shipClientService = new ShipClientService();
-        }
+        private IShipClientService shipService { get; set; } = new ShipClient();
+
         public List<Question> GetLocalQuestions()
         {
             return storedLocalQuestions;
@@ -27,20 +24,20 @@ namespace ShipContentManager.Services
         }
         public async Task<List<Question>> GetQuestionsFromServer()
         {
-            return storedLocalQuestions = await shipClientService.ShipService.GetAllQuestions();
+            return storedLocalQuestions = await shipService.GetAllQuestions();
         }
         public async Task<List<Pack>> GetPacksFromServer()
         {
-            return storedLocalPacks = await shipClientService.ShipService.GetAllPacks();
+            return storedLocalPacks = await shipService.GetAllPacks();
         }
         public async Task<Question> CreateQuestion(Question question)
         {
-            return await shipClientService.ShipService.CreateQuestion(question);
+            return await shipService.CreateQuestion(question);
 
         }
         public async Task<Pack> UpdatePack(string packId, string packName)
         {
-            return await shipClientService.ShipService.UpdatePackName(packId, packName);
+            return await shipService.UpdatePackName(packId, packName);
         }
     }
 }
