@@ -8,3 +8,13 @@ C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\Shared_ShipContentManag
 C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\Shared_ShipContentManager\obj\Debug\netcoreapp3.1\Shared_ShipContentManager.AssemblyInfo.cs
 C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\Shared_ShipContentManager\obj\Debug\netcoreapp3.1\Shared_ShipContentManager.dll
 C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\Shared_ShipContentManager\obj\Debug\netcoreapp3.1\Shared_ShipContentManager.pdb
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\Shared_ShipContentManager\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\Shared_ShipContentManager\bin\Debug\netcoreapp3.1\Shared_ShipContentManager.deps.json
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\Shared_ShipContentManager\bin\Debug\netcoreapp3.1\Shared_ShipContentManager.dll
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\Shared_ShipContentManager\bin\Debug\netcoreapp3.1\Shared_ShipContentManager.pdb
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\Shared_ShipContentManager\obj\Debug\netcoreapp3.1\Shared_ShipContentManager.csprojAssemblyReference.cache
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\Shared_ShipContentManager\obj\Debug\netcoreapp3.1\Shared_ShipContentManager.csproj.CoreCompileInputs.cache
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\Shared_ShipContentManager\obj\Debug\netcoreapp3.1\Shared_ShipContentManager.AssemblyInfoInputs.cache
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\Shared_ShipContentManager\obj\Debug\netcoreapp3.1\Shared_ShipContentManager.AssemblyInfo.cs
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\Shared_ShipContentManager\obj\Debug\netcoreapp3.1\Shared_ShipContentManager.dll
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\Shared_ShipContentManager\obj\Debug\netcoreapp3.1\Shared_ShipContentManager.pdb

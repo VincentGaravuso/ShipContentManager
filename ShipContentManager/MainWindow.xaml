@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
         xmlns:local="clr-namespace:ShipContentManager"
         mc:Ignorable="d"
         Title="Ship Content Manager" Height="602" Width="950" WindowStartupLocation="CenterScreen">
@@ -44,7 +45,9 @@
             </Border>
         </StackPanel>
         <ScrollViewer x:Name="MainWindowScrollView" Margin="30,40,0,0" GotFocus="MainWindowScrollView_GotFocus" Background="#FFDADADA">
-            <WrapPanel x:Name="contentWrapPanel" HorizontalAlignment="Center"/>
+            <WrapPanel x:Name="contentWrapPanel" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <fa:ImageAwesome x:Name="iconLoading" Icon="Spinner" Spin="True" SpinDuration="2" Width="75" Height="75" Foreground="DarkSlateGray" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </WrapPanel>
         </ScrollViewer>
     </Grid>
 </Window>

@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jawad Ahsan\\Documents\\GitHub\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj": {}
+    "C:\\Users\\vinny\\Documents\\GitHub\\VincentGaravuso\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jawad Ahsan\\Documents\\GitHub\\ShipContentManager\\Shared_ShipContentManager\\Shared_ShipContentManager.csproj": {
+    "C:\\Users\\vinny\\Documents\\GitHub\\VincentGaravuso\\ShipContentManager\\Shared_ShipContentManager\\Shared_ShipContentManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jawad Ahsan\\Documents\\GitHub\\ShipContentManager\\Shared_ShipContentManager\\Shared_ShipContentManager.csproj",
+        "projectUniqueName": "C:\\Users\\vinny\\Documents\\GitHub\\VincentGaravuso\\ShipContentManager\\Shared_ShipContentManager\\Shared_ShipContentManager.csproj",
         "projectName": "Shared_ShipContentManager",
-        "projectPath": "C:\\Users\\Jawad Ahsan\\Documents\\GitHub\\ShipContentManager\\Shared_ShipContentManager\\Shared_ShipContentManager.csproj",
-        "packagesPath": "C:\\Users\\Jawad Ahsan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jawad Ahsan\\Documents\\GitHub\\ShipContentManager\\Shared_ShipContentManager\\obj\\",
+        "projectPath": "C:\\Users\\vinny\\Documents\\GitHub\\VincentGaravuso\\ShipContentManager\\Shared_ShipContentManager\\Shared_ShipContentManager.csproj",
+        "packagesPath": "C:\\Users\\vinny\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vinny\\Documents\\GitHub\\VincentGaravuso\\ShipContentManager\\Shared_ShipContentManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Jawad Ahsan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vinny\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -86,20 +87,21 @@
         }
       }
     },
-    "C:\\Users\\Jawad Ahsan\\Documents\\GitHub\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj": {
+    "C:\\Users\\vinny\\Documents\\GitHub\\VincentGaravuso\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jawad Ahsan\\Documents\\GitHub\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj",
+        "projectUniqueName": "C:\\Users\\vinny\\Documents\\GitHub\\VincentGaravuso\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj",
         "projectName": "ShipContentManager",
-        "projectPath": "C:\\Users\\Jawad Ahsan\\Documents\\GitHub\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj",
-        "packagesPath": "C:\\Users\\Jawad Ahsan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jawad Ahsan\\Documents\\GitHub\\ShipContentManager\\ShipContentManager\\obj\\",
+        "projectPath": "C:\\Users\\vinny\\Documents\\GitHub\\VincentGaravuso\\ShipContentManager\\ShipContentManager\\ShipContentManager.csproj",
+        "packagesPath": "C:\\Users\\vinny\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vinny\\Documents\\GitHub\\VincentGaravuso\\ShipContentManager\\ShipContentManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Jawad Ahsan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vinny\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -113,8 +115,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Jawad Ahsan\\Documents\\GitHub\\ShipContentManager\\Shared_ShipContentManager\\Shared_ShipContentManager.csproj": {
-                "projectPath": "C:\\Users\\Jawad Ahsan\\Documents\\GitHub\\ShipContentManager\\Shared_ShipContentManager\\Shared_ShipContentManager.csproj"
+              "C:\\Users\\vinny\\Documents\\GitHub\\VincentGaravuso\\ShipContentManager\\Shared_ShipContentManager\\Shared_ShipContentManager.csproj": {
+                "projectPath": "C:\\Users\\vinny\\Documents\\GitHub\\VincentGaravuso\\ShipContentManager\\Shared_ShipContentManager\\Shared_ShipContentManager.csproj"
               }
             }
           }
@@ -135,6 +137,10 @@
             "AdonisUI.ClassicTheme": {
               "target": "Package",
               "version": "[1.14.0, )"
+            },
+            "FontAwesome.WPF": {
+              "target": "Package",
+              "version": "[4.7.0.9, )"
             },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",

@@ -46,7 +46,6 @@ C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentMa
 C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\PacksUserControl.baml
 C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\QuestionsUserControl.baml
 C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.g.resources
-C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.csproj.CoreCompileInputs.cache
 C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.AssemblyInfoInputs.cache
 C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.AssemblyInfo.cs
 C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.csproj.CopyComplete
@@ -96,3 +95,21 @@ C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\ShipContentManager\obj\
 C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.dll
 C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.pdb
 C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.genruntimeconfig.cache
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\ServiceStack.Text.dll
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\Shared_ShipContentManager.dll
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\Shared_ShipContentManager.pdb
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.csprojAssemblyReference.cache
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\FontAwesome.WPF.dll
+C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.csproj.CoreCompileInputs.cache

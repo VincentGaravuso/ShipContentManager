@@ -10,6 +10,7 @@ using Shared_ShipContentManager.Interfaces;
 using Shared_ShipContentManager.Models;
 using ShipContentManager;
 using ShipContentManager.Services;
+using FontAwesome.WPF;
 
 namespace ShipContentManager
 {
@@ -18,6 +19,7 @@ namespace ShipContentManager
     /// </summary>
     public partial class MainWindow : Window
     {
+        ImageAwesome loadingIcon;
         private bool hamburgerMenuSwitch = true;
         private ContentManagerDataService dataService;
         public MainWindow(){}
@@ -26,7 +28,18 @@ namespace ShipContentManager
             dataService = new ContentManagerDataService(clientService);
             InitializeComponent();
             var contentType = CreateContentType.Pack;
-            renderContentCreateBtn(contentType);
+            renderContentCreateBtn(contentType); 
+            loadingIcon = new ImageAwesome();
+            setUpLoadingIcon();
+        }
+        private void setUpLoadingIcon()
+        {
+            loadingIcon.Icon = FontAwesomeIcon.Spinner;
+            loadingIcon.Spin = true;
+            loadingIcon.SpinDuration = 2;
+            loadingIcon.Width = 75;
+            loadingIcon.Height = 75;
+            loadingIcon.Foreground = Brushes.DarkSlateGray;
         }
         private void btnHamburger_Click(object sender, RoutedEventArgs e)
         {
@@ -53,10 +66,18 @@ namespace ShipContentManager
                 hamburgerMenuSwitch = true;
             }
         }
+        
+        private void showWrapPanelLoading()
+        {
+            contentWrapPanel.Children.Clear();
+            contentWrapPanel.Children.Add(loadingIcon);
+            contentWrapPanel.VerticalAlignment = VerticalAlignment.Center;
+        }
 
         private async void btnPacks_Click(object sender, RoutedEventArgs e)
         {
-            //Query Db for packs and store to Global list
+            ShowHideMenu();
+            showWrapPanelLoading();
             displayPacks(await dataService.GetPacksFromServer());
             var contentType = CreateContentType.Pack;
             renderContentCreateBtn(contentType);
@@ -64,6 +85,8 @@ namespace ShipContentManager
 
         private async void btnQuestions_Click(object sender, RoutedEventArgs e)
         {
+            ShowHideMenu();
+            showWrapPanelLoading();
             displayQuestions(await dataService.GetQuestionsFromServer());
             var contentType = CreateContentType.Question;
             renderContentCreateBtn(contentType);
@@ -107,6 +130,7 @@ namespace ShipContentManager
         private  void displayQuestions(List<Question> questions)
         {
             contentWrapPanel.Children.Clear();
+            contentWrapPanel.VerticalAlignment = VerticalAlignment.Stretch;
             int questionCount = 0;
             foreach(Question question in questions)
             {
@@ -124,7 +148,8 @@ namespace ShipContentManager
         private void displayPacks(List<Pack> packs)
         {
             contentWrapPanel.Children.Clear();
-            foreach(Pack pack in packs)
+            contentWrapPanel.VerticalAlignment = VerticalAlignment.Stretch;
+            foreach (Pack pack in packs)
             {
                 PacksUserControl packControl = new PacksUserControl();
                 packControl.SetPackNameLabelText(pack.Name);
