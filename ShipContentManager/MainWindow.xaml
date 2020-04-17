@@ -6,7 +6,7 @@
         xmlns:fa="http://schemas.fontawesome.io/icons/"
         xmlns:local="clr-namespace:ShipContentManager"
         mc:Ignorable="d"
-        Title="Ship Content Manager" Height="602" Width="950" WindowStartupLocation="CenterScreen">
+        Title="Ship Content Manager" Height="916" Width="1264" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Storyboard x:Key="sbShowHamburgerMenu" >
             <ThicknessAnimation Storyboard.TargetProperty="Margin" From="-120,40,0,0" To="0,40,0,0" DecelerationRatio=".9" Duration="0:0:0.3" />
@@ -17,6 +17,9 @@
     </Window.Resources>
     <Grid x:Name="mainGrid" Initialized="mainGrid_Initialized">
         <Grid Background="#114084" VerticalAlignment="Top" Height="40">
+            <Button x:Name="btnAddContent" HorizontalAlignment="Right" VerticalAlignment="Center" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFF7F7F7" Click="btnAddContent_Click" RenderTransformOrigin="-0.7,0.468" Margin="0,0,10,0">
+                <fa:ImageAwesome Icon="Plus" Foreground="#FFE6E6E6" AutomationProperties.HelpText="Add Pack" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Button>
         </Grid>
         <StackPanel Panel.ZIndex="2" Name="pnlLeftMenu" Orientation="Horizontal" HorizontalAlignment="Left" Margin="-120,40,0,0" VerticalAlignment="Stretch">
             <Border BorderThickness="0" Width="150" Background="#FF1C1C1C">
@@ -46,7 +49,7 @@
         </StackPanel>
         <ScrollViewer x:Name="MainWindowScrollView" Margin="30,40,0,0" GotFocus="MainWindowScrollView_GotFocus" Background="#FFDADADA">
             <WrapPanel x:Name="contentWrapPanel" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <fa:ImageAwesome x:Name="iconLoading" Icon="Spinner" Spin="True" SpinDuration="2" Width="75" Height="75" Foreground="DarkSlateGray" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                <fa:ImageAwesome x:Name="iconLoading" Icon="Spinner" Spin="True" SpinDuration="2" Width="75" Height="75" Foreground="#FF1C1C1C" VerticalAlignment="Center" HorizontalAlignment="Center" />
             </WrapPanel>
         </ScrollViewer>
     </Grid>

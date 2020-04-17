@@ -19,27 +19,16 @@ namespace ShipContentManager
     /// </summary>
     public partial class MainWindow : Window
     {
-        ImageAwesome loadingIcon;
+        private const string AddQuestion = "ADD QUESTION";
+        private const string AddPack = "ADD PACK";
         private bool hamburgerMenuSwitch = true;
+
         private ContentManagerDataService dataService;
         public MainWindow(){}
         public MainWindow(IShipClientService clientService)
         {
             dataService = new ContentManagerDataService(clientService);
             InitializeComponent();
-            var contentType = CreateContentType.Pack;
-            renderContentCreateBtn(contentType); 
-            loadingIcon = new ImageAwesome();
-            setUpLoadingIcon();
-        }
-        private void setUpLoadingIcon()
-        {
-            loadingIcon.Icon = FontAwesomeIcon.Spinner;
-            loadingIcon.Spin = true;
-            loadingIcon.SpinDuration = 2;
-            loadingIcon.Width = 75;
-            loadingIcon.Height = 75;
-            loadingIcon.Foreground = Brushes.DarkSlateGray;
         }
         private void btnHamburger_Click(object sender, RoutedEventArgs e)
         {
@@ -70,7 +59,7 @@ namespace ShipContentManager
         private void showWrapPanelLoading()
         {
             contentWrapPanel.Children.Clear();
-            contentWrapPanel.Children.Add(loadingIcon);
+            contentWrapPanel.Children.Add(iconLoading);
             contentWrapPanel.VerticalAlignment = VerticalAlignment.Center;
         }
 
@@ -79,8 +68,6 @@ namespace ShipContentManager
             ShowHideMenu();
             showWrapPanelLoading();
             displayPacks(await dataService.GetPacksFromServer());
-            var contentType = CreateContentType.Pack;
-            renderContentCreateBtn(contentType);
         }
 
         private async void btnQuestions_Click(object sender, RoutedEventArgs e)
@@ -88,47 +75,11 @@ namespace ShipContentManager
             ShowHideMenu();
             showWrapPanelLoading();
             displayQuestions(await dataService.GetQuestionsFromServer());
-            var contentType = CreateContentType.Question;
-            renderContentCreateBtn(contentType);
-        }
-        //get rid of this shit
-        private void renderContentCreateBtn(CreateContentType content)
-        {
-            Button createButton = new Button();
-            BrushConverter bc = new BrushConverter();
-            createButton.VerticalAlignment = VerticalAlignment.Top;
-            createButton.HorizontalAlignment = HorizontalAlignment.Right;
-            createButton.Width = 100;
-            createButton.Background = (Brush)bc.ConvertFrom("#3466AA");
-            createButton.Foreground = Brushes.White;
-
-            if (content == CreateContentType.Question)
-            {
-                createButton.Content = "Create Question";
-                createButton.Click += createQuestionsBtn_Click;
-            }
-            else if (content == CreateContentType.Pack)
-            {
-                createButton.Content = "Create Pack";
-                createButton.Click += CreatePackButton_Click; ;
-            }
-            mainGrid.Children.Remove(createButton);
-            mainGrid.Children.Add(createButton);
-        }
-
-        private void CreatePackButton_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void createQuestionsBtn_Click(object sender, RoutedEventArgs e)
-        {
-            CreateQuestionWindow createQuestionWindow = new CreateQuestionWindow();
-            createQuestionWindow.Show();
         }
 
         private  void displayQuestions(List<Question> questions)
         {
+            btnAddContent.ToolTip = AddQuestion;
             contentWrapPanel.Children.Clear();
             contentWrapPanel.VerticalAlignment = VerticalAlignment.Stretch;
             int questionCount = 0;
@@ -147,6 +98,7 @@ namespace ShipContentManager
 
         private void displayPacks(List<Pack> packs)
         {
+            btnAddContent.ToolTip = AddPack;
             contentWrapPanel.Children.Clear();
             contentWrapPanel.VerticalAlignment = VerticalAlignment.Stretch;
             foreach (Pack pack in packs)
@@ -180,6 +132,20 @@ namespace ShipContentManager
             {
                 //Query Db for packs and store to Global list
                 displayPacks(dataService.GetLocalPacks());
+            }
+        }
+
+        private void btnAddContent_Click(object sender, RoutedEventArgs e)
+        {
+            if(btnAddContent.ToolTip.ToString() == AddPack)
+            {
+                CreatePackWindow createPackWindow= new CreatePackWindow();
+                createPackWindow.Show();
+            }
+            else
+            {
+                CreateQuestionWindow createQuestionWindow = new CreateQuestionWindow();
+                createQuestionWindow.Show();
             }
         }
     }
