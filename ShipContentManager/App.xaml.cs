@@ -1,20 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using ServiceStack;
-using Shared_ShipContentManager.Interfaces;
-using Shared_ShipContentManager.Services;
-using ShipContentManager.Services;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Net.Http;
-using System.Reflection;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 
 namespace ShipContentManager
 {

@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Reflection;
+﻿using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using ServiceStack;
-using Shared_ShipContentManager.Models;
 
 namespace Shared_ShipContentManager.Services
 {

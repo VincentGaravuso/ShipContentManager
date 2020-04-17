@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Controls;
 using Shared_ShipContentManager.Models;
-
 namespace ShipContentManager
 {
     /// <summary>
