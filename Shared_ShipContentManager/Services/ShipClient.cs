@@ -21,10 +21,10 @@ namespace Shared_ShipContentManager.Services
     public partial class ShipClient : IShipClientService
     {
         private readonly HttpClient client;
-        public ShipClient(HttpClient client)
+        public ShipClient()
         {
             //TODO: FIND BETTER SOLUTION FOR CREDENTIAL MANAGING
-            this.client = client; 
+            client = new HttpClient();
             string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\Shared_ShipContentManager\appsettings.json");
             var fileLines = File.ReadAllText(filePath);
             var jsonObject = JsonConvert.DeserializeObject<Authentication>(fileLines);
@@ -36,7 +36,7 @@ namespace Shared_ShipContentManager.Services
         {
             //var json = JsonConvert.SerializeObject(pack);
             //var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
-            var stringContent = DataFormatService.JsonToStringContent(ref pack);
+            var stringContent = DataFormatService.JsonToStringContent(pack);
             var response = await client.PostAsync("CreatePack", stringContent);
             if (response.IsSuccessStatusCode)
             {
@@ -54,7 +54,7 @@ namespace Shared_ShipContentManager.Services
         {
             //var json = JsonConvert.SerializeObject(question);
             //var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
-            var stringContent = DataFormatService.JsonToStringContent(ref question);
+            var stringContent = DataFormatService.JsonToStringContent(question);
             var response = await client.PostAsync("CreateQuestion", stringContent);
             if (response.IsSuccessStatusCode)
             {
@@ -71,7 +71,7 @@ namespace Shared_ShipContentManager.Services
         {
             //string json = JsonConvert.SerializeObject(questionId);
             //var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
-            var stringContent = DataFormatService.JsonToStringContent(ref questionId);
+            var stringContent = DataFormatService.JsonToStringContent(questionId);
             var response = await client.PostAsync("DeleteQuestion", stringContent);
             if (response.IsSuccessStatusCode)
             {

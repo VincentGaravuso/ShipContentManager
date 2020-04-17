@@ -115,3 +115,6 @@ C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentMa
 C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\ShipContentManager.csproj.CoreCompileInputs.cache
 C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\CreatePackWindow.g.cs
 C:\Users\vinny\Documents\GitHub\VincentGaravuso\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\CreatePackWindow.baml
+C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\ShipContentManager\bin\Debug\netcoreapp3.1\FontAwesome.WPF.dll
+C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\CreatePackWindow.g.cs
+C:\Users\Jawad Ahsan\Documents\GitHub\ShipContentManager\ShipContentManager\obj\Debug\netcoreapp3.1\CreatePackWindow.baml

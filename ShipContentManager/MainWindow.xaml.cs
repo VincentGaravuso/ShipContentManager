@@ -11,6 +11,7 @@ using Shared_ShipContentManager.Models;
 using ShipContentManager;
 using ShipContentManager.Services;
 using FontAwesome.WPF;
+using Shared_ShipContentManager.Services;
 
 namespace ShipContentManager
 {
@@ -24,10 +25,10 @@ namespace ShipContentManager
         private bool hamburgerMenuSwitch = true;
 
         private ContentManagerDataService dataService;
-        public MainWindow(){}
-        public MainWindow(IShipClientService clientService)
+        public MainWindow()
         {
-            dataService = new ContentManagerDataService(clientService);
+            dataService = new ContentManagerDataService();
+
             InitializeComponent();
         }
         private void btnHamburger_Click(object sender, RoutedEventArgs e)
@@ -124,7 +125,7 @@ namespace ShipContentManager
         private async void mainGrid_Initialized(object sender, EventArgs e)
         {
             //On start - show packs screen
-            if(dataService.GetLocalPacks() != null)
+            if(dataService.GetLocalPacks() == null)
             {
                 displayPacks(await dataService.GetPacksFromServer());
             }

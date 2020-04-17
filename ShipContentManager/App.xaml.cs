@@ -23,27 +23,9 @@ namespace ShipContentManager
     /// </summary>
     public partial class App : Application
     {
-        private static ServiceProvider serviceProvider;
-        private static ServiceCollection serviceCollection;
-        private static HttpClient httpClient;
-        public App()
+        private void OnStartup(object sender, StartupEventArgs e)
         {
-            serviceCollection = new ServiceCollection();
-            httpClient = new HttpClient();
-            ConfigureServices(serviceCollection);
-            serviceProvider = serviceCollection.BuildServiceProvider();
-        }
-        private void App_OnStartup(object sender, StartupEventArgs e)
-        {
-            var mainWindow = serviceProvider.GetService<MainWindow>();
-            mainWindow.Show();
-        }
-        private void ConfigureServices(IServiceCollection services)
-        {
-            services
-              .AddSingleton<HttpClient>()
-              .AddSingleton<IShipClientService>(x => new ShipClient(httpClient))
-              .AddSingleton<MainWindow>();
+
         }
     }
 }

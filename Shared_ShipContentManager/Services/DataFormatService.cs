@@ -9,7 +9,7 @@ namespace Shared_ShipContentManager.Services
 {
     public static class DataFormatService
     {
-        public static StringContent JsonToStringContent<T>(ref T model)
+        public static StringContent JsonToStringContent<T>(T model)
         {
             var json = JsonConvert.SerializeObject(model);
             return new StringContent(json, Encoding.UTF8, "application/json");
