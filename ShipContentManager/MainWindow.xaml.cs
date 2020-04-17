@@ -104,7 +104,7 @@ namespace ShipContentManager
             foreach (Pack pack in packs)
             {
                 PacksUserControl packControl = new PacksUserControl();
-                packControl.SetPackNameLabelText(pack.Name);
+                packControl.SetPackNameLabelText(pack.Name.ToUpper());
                 packControl.SetDateCreatedLabelText(pack.DateCreatedToString());
                 packControl.SetIsMiniPackCheckbox(pack.IsMiniPack);
                 packControl.Margin = new Thickness(10, 10, 0, 0);
