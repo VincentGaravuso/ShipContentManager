@@ -39,8 +39,8 @@ namespace Shared_ShipContentManager.Services
         }
         public async Task<Question> CreateQuestion(Question question)
         {
-            var stringContent = DataFormatService.JsonToStringContent(question);
-            var response = await client.PostAsync("CreateQuestion", stringContent);
+            var queryParameters = buildCreateQuestionQueryParameter(question);
+            var response = await client.PostAsync("CreateQuestion?" + queryParameters, null);
             if (response.IsSuccessStatusCode)
             {
                 var responseString = await DataFormatService.ResponseMessageToString(response);
@@ -51,6 +51,18 @@ namespace Shared_ShipContentManager.Services
                 throw new HttpRequestException();
             }
         }
+
+        private object buildCreateQuestionQueryParameter(Question question)
+        {
+            string query = "";
+            foreach(string packId in question.Packs)
+            {
+                query += "packObjectIds=" + packId + "&"; 
+            }
+            query += "questionText=" + question.QuestionText;
+            return query;
+        }
+
         public async Task<Question> DeleteQuestion(Question questionId)
         {
             var stringContent = DataFormatService.JsonToStringContent(questionId);

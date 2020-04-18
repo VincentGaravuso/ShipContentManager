@@ -125,11 +125,12 @@ namespace ShipContentManager
             //On start - show packs screen
             if(dataService.GetLocalPacks() == null)
             {
+                //Query Db for packs and store to Global list
                 displayPacks(await dataService.GetPacksFromServer());
             }
             else
             {
-                //Query Db for packs and store to Global list
+                //Pull packs from stored list
                 displayPacks(dataService.GetLocalPacks());
             }
         }
@@ -138,14 +139,22 @@ namespace ShipContentManager
         {
             if(btnAddContent.ToolTip.ToString() == AddPack)
             {
-                CreatePackWindow createPackWindow = new CreatePackWindow();
+                CreatePackWindow createPackWindow = new CreatePackWindow(dataService);
                 createPackWindow.Show();
             }
             else
             {
-                CreateQuestionWindow createQuestionWindow = new CreateQuestionWindow();
+                CreateQuestionWindow createQuestionWindow = new CreateQuestionWindow(dataService);
                 createQuestionWindow.Show();
             }
+        }
+        public async void RefreshQuestionsFromDb()
+        {
+            displayQuestions(await dataService.GetQuestionsFromServer());
+        }
+        public async void RefreshPacksFromDb()
+        {
+            displayPacks(await dataService.GetPacksFromServer());
         }
     }
 }

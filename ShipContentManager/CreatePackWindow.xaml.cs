@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using ShipContentManager.Services;
+using System.Windows;
 
 namespace ShipContentManager
 {
@@ -7,8 +8,10 @@ namespace ShipContentManager
     /// </summary>
     public partial class CreatePackWindow : Window
     {
-        public CreatePackWindow()
+        private ContentManagerDataService dataService;
+        public CreatePackWindow(ContentManagerDataService ds)
         {
+            dataService = ds;
             InitializeComponent();
         }
     }
