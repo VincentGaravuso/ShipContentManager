@@ -42,7 +42,9 @@ namespace ShipContentManager
                 q.QuestionText = txtBlockQuestionText.Text;
                 //TODO: Add check for response
                 await dataService.CreateQuestion(q);
+                btnSave.IsEnabled = false;
                 MainWindow main = (MainWindow)Application.Current.MainWindow;
+                btnSave.IsEnabled = true;
                 main.RefreshQuestionsFromDb();
                 this.Close();
             }

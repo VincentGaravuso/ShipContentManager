@@ -43,5 +43,9 @@ namespace ShipContentManager.Services
         {
             return await shipService.UpdatePackName(packId, packName);
         }
+        public async Task<Question> UpdateQuestion(Question question)
+        {
+            return await shipService.UpdateQuestion(question);
+        }
     }
 }

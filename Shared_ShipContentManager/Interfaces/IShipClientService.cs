@@ -10,6 +10,7 @@ namespace Shared_ShipContentManager.Interfaces
         Task<List<Pack>> GetAllPacks();
         Task<List<Question>> GetAllQuestions();
         Task<Question> CreateQuestion(Question question);
+        Task<Question> UpdateQuestion(Question question);
         Task<Question> DeleteQuestion(Question deletableQuestion);
         Task<Pack> UpdatePackName(string packId, string PackName);
 

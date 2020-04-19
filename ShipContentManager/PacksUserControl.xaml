@@ -3,23 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ShipContentManager"
-             mc:Ignorable="d" Height="152" Width="205">
+             xmlns:fa="http://schemas.fontawesome.com/icons/"
+             xmlns:local="clr-namespace:ShipContentManager" 
+             mc:Ignorable="d" Height="110" Width="350">
     <Grid Background="#FFF1F1F1">
         <Grid.Effect>
             <DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="1" Direction="315" RenderingBias="Performance" Opacity="1" />
         </Grid.Effect>
         <Grid Margin="0,0,0,76" Background="#FF3466AA" VerticalAlignment="Top">
-            <Button x:Name="btnHamburger" Width="30" Height="30" VerticalAlignment="Center" HorizontalAlignment="Right" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,0,2,0">
-                <Button.Background>
-                    <ImageBrush ImageSource="/Images/editIcon.png" Stretch="None"/>
-                </Button.Background>
-
-            </Button>
             <Label x:Name="lblPackName" Foreground="#FFF1F1F1" Content="&lt;Pack Name&gt;" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="18" />
+
+            <Button x:Name="btnEditSavePack" Width="30" Height="30" VerticalAlignment="Center" HorizontalAlignment="Right" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,0,2,0" Background="{x:Null}" Click="btnEditSavePack_Click">
+                <fa:ImageAwesome x:Name="iconSaveEdit" Icon="Regular_Edit" Width="25" Height="25" Foreground="#FFF1F1F1" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Button>
+            <TextBox x:Name="txtBoxPackName" Visibility="Hidden" Foreground="#FF1C1C1C" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="18" Width="129"/>
         </Grid>
         <CheckBox x:Name="checkboxIsMiniPack" Content="Is Mini Pack" Margin="0,39,0,0" VerticalAlignment="Top" Foreground="#FF1C1C1C" FontSize="16" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="#FFF1F1F1" BorderBrush="Gray" FontWeight="Normal" IsEnabled="False"/>
-        <Label x:Name="lblDateCreated" Content="Date Created" Margin="0,129,0,0" VerticalAlignment="Top" Foreground="#FF1C1C1C" HorizontalContentAlignment="Right" FontWeight="Normal"/>
+        <Label x:Name="lblDateCreated" Content="Date Created" Margin="0,0,0,0" VerticalAlignment="Bottom" Foreground="#FF1C1C1C" HorizontalContentAlignment="Right" FontWeight="Normal"/>
 
     </Grid>
 </UserControl>

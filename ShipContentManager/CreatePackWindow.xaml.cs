@@ -25,7 +25,9 @@ namespace ShipContentManager
                 p.Name = txtBoxPackName.Text;
                 p.IsMiniPack = checkBoxIsMiniPack.IsChecked.GetValueOrDefault();
                 await dataService.CreatePack(p);
+                btnSave.IsEnabled = false;
                 MainWindow main = (MainWindow)Application.Current.MainWindow;
+                btnSave.IsEnabled = true;
                 main.RefreshPacksFromDb();
                 this.Close();
 

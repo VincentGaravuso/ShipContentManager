@@ -85,11 +85,8 @@ namespace ShipContentManager
             foreach(Question question in questions)
             {
                 questionCount++;
-                QuestionsUserControl questionControl = new QuestionsUserControl();
+                QuestionsUserControl questionControl = new QuestionsUserControl(dataService, question);
                 questionControl.SetQuestionNumberLabel(questionCount.ToString());
-                questionControl.SetQuestionTextLabel(question.QuestionText);
-                questionControl.SetDateCreatedLabel(question.DateCreatedToString());
-                questionControl.SetPacks(dataService.GetLocalPacks(), question.Packs);
                 questionControl.Margin = new Thickness(10, 10, 0, 0);
                 contentWrapPanel.Children.Add(questionControl);
             }
@@ -102,10 +99,7 @@ namespace ShipContentManager
             contentWrapPanel.VerticalAlignment = VerticalAlignment.Stretch;
             foreach (Pack pack in packs)
             {
-                PacksUserControl packControl = new PacksUserControl();
-                packControl.SetPackNameLabelText(pack.Name.ToUpper());
-                packControl.SetDateCreatedLabelText(pack.DateCreatedToString());
-                packControl.SetIsMiniPackCheckbox(pack.IsMiniPack);
+                PacksUserControl packControl = new PacksUserControl(dataService, pack);
                 packControl.Margin = new Thickness(10, 10, 0, 0);
                 contentWrapPanel.Children.Add(packControl);
             }

@@ -10,7 +10,7 @@ namespace Shared_ShipContentManager.Models
     public class Question
     {
         [JsonProperty("objectId")]
-        public string QuestionObjectId { get; }
+        public string QuestionObjectId { get; set; }
         [JsonProperty("questionText")]
         public string QuestionText { get; set; }
         [JsonProperty(null), AllowNull]

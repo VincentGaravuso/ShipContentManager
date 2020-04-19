@@ -38,11 +38,6 @@ namespace Shared_ShipContentManager.Services
             }
         }
 
-        private object buildCreatePackQueryParameter(Pack pack)
-        {
-            return $"packName={pack.Name}&IsMiniPack={pack.IsMiniPack.ToString()}";
-        }
-
         public async Task<Question> CreateQuestion(Question question)
         {
             var queryParameters = buildCreateQuestionQueryParameter(question);
@@ -57,18 +52,20 @@ namespace Shared_ShipContentManager.Services
                 throw new HttpRequestException();
             }
         }
-
-        private object buildCreateQuestionQueryParameter(Question question)
+        public async Task<Question> UpdateQuestion(Question question)
         {
-            string query = "";
-            foreach(string packId in question.Packs)
+            var queryParameters = buildUpdateQuestionQueryParameter(question);
+            var response = await client.PutAsync("UpdateQuestion?" + queryParameters, null);
+            if (response.IsSuccessStatusCode)
             {
-                query += "packObjectIds=" + packId + "&"; 
+                var responseString = await DataFormatService.ResponseMessageToString(response);
+                return DataFormatService.JsonToModel<Question>(responseString);
             }
-            query += "questionText=" + question.QuestionText;
-            return query;
+            else
+            {
+                throw new HttpRequestException();
+            }
         }
-
         public async Task<Question> DeleteQuestion(Question questionId)
         {
             var stringContent = DataFormatService.JsonToStringContent(questionId);
@@ -111,18 +108,52 @@ namespace Shared_ShipContentManager.Services
         }
         public async Task<Pack> UpdatePackName(string packId, string packName)
         {
-            var stringContent = DataFormatService.JsonToStringContent(new { packId, packName });
-            var response = await client.PutAsync("UpdatePackName", stringContent);
+            var queryParameters = buildUpdatePackQueryParameter(packId, packName);
+            var response = await client.PutAsync("UpdatePackName?" + queryParameters, null);
 
             if (response.IsSuccessStatusCode)
             {
                 var responseString = await DataFormatService.ResponseMessageToString(response);
-                return JsonConvert.DeserializeObject<Pack>(responseString);
+                return DataFormatService.JsonToModel<Pack>(responseString);
             }
             else
             {
                 throw new HttpRequestException();
             }
-        }   
+        }
+
+     
+
+        private object buildCreatePackQueryParameter(Pack pack)
+        {
+            return $"packName={pack.Name}&IsMiniPack={pack.IsMiniPack.ToString()}";
+        }
+
+        private object buildUpdatePackQueryParameter(string packId, string packName)
+        {
+            return $"packObjectId={packId}&newPackName={packName}";
+        }
+        private object buildCreateQuestionQueryParameter(Question question)
+        {
+            string query = "";
+            foreach(string packId in question.Packs)
+            {
+                query += $"packObjectIds={packId}&"; 
+            }
+            query += $"questionText={question.QuestionText}";
+            return query;
+        }
+        private object buildUpdateQuestionQueryParameter(Question question)
+        {
+            string query = "";
+            foreach (string packId in question.Packs)
+            {
+                query += $"packObjectIds={packId}&";
+            }
+            query  += $"questionId={question.QuestionObjectId}&questionText={question.QuestionText}";
+
+            return query;
+        }
+
     }
 }
