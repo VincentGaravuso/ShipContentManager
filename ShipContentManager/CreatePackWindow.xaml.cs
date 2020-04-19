@@ -1,4 +1,6 @@
-﻿using ShipContentManager.Services;
+﻿using Shared_ShipContentManager.Models;
+using ShipContentManager.Services;
+using System;
 using System.Windows;
 
 namespace ShipContentManager
@@ -14,5 +16,30 @@ namespace ShipContentManager
             dataService = ds;
             InitializeComponent();
         }
+
+        private async void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            if(validateFields())
+            {
+                Pack p = new Pack();
+                p.Name = txtBoxPackName.Text;
+                p.IsMiniPack = checkBoxIsMiniPack.IsChecked.GetValueOrDefault();
+                await dataService.CreatePack(p);
+                MainWindow main = (MainWindow)Application.Current.MainWindow;
+                main.RefreshPacksFromDb();
+                this.Close();
+
+            }
+        }
+
+        private bool validateFields()
+        {
+            if(string.IsNullOrWhiteSpace(txtBoxPackName.Text))
+            {
+                return false;
+            }
+            return true;
+        }
     }
+
 }

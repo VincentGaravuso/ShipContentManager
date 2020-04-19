@@ -10,9 +10,9 @@
         <Grid Margin="0,0,0,120" Background="#3466AA" VerticalAlignment="Top">
             <Label x:Name="lblTitle" Content="Create Pack" HorizontalAlignment="Center" Margin="0,5,0,5" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="18"/>
         </Grid>
-        <Button Content="Save" HorizontalAlignment="Right" Margin="0,0,10,15" VerticalAlignment="Bottom" Width="46" Background="#FF3466AA" Foreground="#FFF1F1F1"/>
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Right" Margin="0,0,10,15" VerticalAlignment="Bottom" Width="46" Background="#FF3466AA" Foreground="#FFF1F1F1" Click="btnSave_Click"/>
         <Label x:Name="lblQuestionText" Content="Pack Name" Margin="10,52,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="14" Foreground="#FF1C1C1C" FontWeight="Normal"/>
-        <TextBox x:Name="txtBlockQuestionText" Margin="10,83,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" Background="#FFF1F1F1" BorderBrush="Gray" Foreground="#FF1C1C1C"/>
-        <CheckBox Content="Is Mini Pack" HorizontalAlignment="Left" Margin="10,112,0,0" VerticalAlignment="Top" Height="16"/>
+        <CheckBox x:Name="checkBoxIsMiniPack" Content="Is Mini Pack" HorizontalAlignment="Left" Margin="10,112,0,0" VerticalAlignment="Top" Height="16"/>
+        <TextBox x:Name="txtBoxPackName" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" Height="26" Margin="0,81,0,0" VerticalContentAlignment="Center"/>
     </Grid>
 </Window>

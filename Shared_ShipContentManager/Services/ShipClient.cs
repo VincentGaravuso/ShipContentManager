@@ -25,8 +25,8 @@ namespace Shared_ShipContentManager.Services
         }
         public async Task<Pack> CreatePack(Pack pack)
         {
-            var stringContent = DataFormatService.JsonToStringContent(pack);
-            var response = await client.PostAsync("CreatePack", stringContent);
+            var queryParameters = buildCreatePackQueryParameter(pack);
+            var response = await client.PostAsync("CreatePack?" + queryParameters, null);
             if (response.IsSuccessStatusCode)
             {
                 var responseString = await DataFormatService.ResponseMessageToString(response);
@@ -37,6 +37,12 @@ namespace Shared_ShipContentManager.Services
                 throw new HttpRequestException();
             }
         }
+
+        private object buildCreatePackQueryParameter(Pack pack)
+        {
+            return $"packName={pack.Name}&IsMiniPack={pack.IsMiniPack.ToString()}";
+        }
+
         public async Task<Question> CreateQuestion(Question question)
         {
             var queryParameters = buildCreateQuestionQueryParameter(question);
@@ -101,7 +107,6 @@ namespace Shared_ShipContentManager.Services
             else
             {
                 throw new HttpRequestException();
-
             }
         }
         public async Task<Pack> UpdatePackName(string packId, string packName)

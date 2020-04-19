@@ -11,34 +11,14 @@
             <Label x:Name="lblTitle" Content="Create Question" HorizontalAlignment="Center" Margin="0,5,0,5" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="18"/>
         </Grid>
         <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Right" Margin="0,0,10,15" VerticalAlignment="Bottom" Width="46" Background="#FF3466AA" Foreground="#FFF1F1F1" Click="btnSave_Click"/>
-        <ListBox x:Name="checkedListBox" Margin="10,153,10,40"
-                 SelectionMode="Multiple" Foreground="#FF1C1C1C" BorderBrush="Gray" Background="#FFF1F1F1" FontWeight="Bold">
-            <ListBox.Resources>
-                <Style TargetType="ListBoxItem">
-                    <Setter Property="OverridesDefaultStyle" Value="true" />
-                    <Setter Property="SnapsToDevicePixels" Value="true" />
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="ListBoxItem">
-                                <CheckBox Margin="5,2">
-                                    <ContentPresenter />
-                                </CheckBox>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
-            </ListBox.Resources>
-        </ListBox>
+
         <Label x:Name="lblQuestionText" Content="Question" Margin="10,52,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="14" Foreground="#FF1C1C1C" FontWeight="Normal"/>
         <TextBox x:Name="txtBlockQuestionText" Margin="10,83,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="65" Background="#FFF1F1F1" BorderBrush="Gray" Foreground="#FF1C1C1C"/>
-        <ListView Height="141" 
-              HorizontalAlignment="Center" 
-              Name="listView1" 
-              VerticalAlignment="Top" 
-              Width="280"
+        <ListView 
+              Name="listView1"
               ItemsSource="{Binding}"
               IsSynchronizedWithCurrentItem="True"
-              SelectionChanged="listView1_SelectionChanged" Margin="0,153,0,0">
+              SelectionChanged="listView1_SelectionChanged" Margin="10,153,10,40">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
@@ -49,8 +29,7 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding PackObjectId}" Header="ID" />
-                        <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Name" Width="200" />
+                        <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Name" Width="250" />
                     </GridView.Columns>
                 </GridView>
             </ListView.View>

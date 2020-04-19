@@ -12,13 +12,13 @@ namespace ShipContentManager
     public partial class CreateQuestionWindow : Window
     {
         private ContentManagerDataService dataService;
-        private List<string> selectedPacks;
+        private List<string> userSelectedPacks;
         public CreateQuestionWindow(ContentManagerDataService ds)
         {
             dataService = ds;
             InitializeComponent();
             populatePacksList(); 
-            selectedPacks = new List<string>();
+            userSelectedPacks = new List<string>();
         }
 
         private async void populatePacksList()
@@ -33,27 +33,44 @@ namespace ShipContentManager
 
         private async void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            Question q = new Question();
-            q.DateCreated = DateTime.Now;
-            q.Packs = selectedPacks;
-            q.QuestionText = txtBlockQuestionText.Text;
-            //TODO: Add check for response
-            await dataService.CreateQuestion(q); 
-            MainWindow main = (MainWindow)Application.Current.MainWindow;
-            main.RefreshQuestionsFromDb();
-            this.Close();
+            if (validateFileds())
+            {
+
+                Question q = new Question();
+                q.DateCreated = DateTime.Now;
+                q.Packs = userSelectedPacks;
+                q.QuestionText = txtBlockQuestionText.Text;
+                //TODO: Add check for response
+                await dataService.CreateQuestion(q);
+                MainWindow main = (MainWindow)Application.Current.MainWindow;
+                main.RefreshQuestionsFromDb();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("All fields must be filled out!", "Error", MessageBoxButton.OK);
+            }
+        }
+
+        private bool validateFileds()
+        {
+            if (string.IsNullOrWhiteSpace(txtBlockQuestionText.Text) || userSelectedPacks.Count == 0)
+            {
+                return false;
+            }
+            return true;
         }
 
         private void listView1_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             foreach (Pack p in e.RemovedItems)
             {
-                selectedPacks.Remove(p.PackObjectId);
+                userSelectedPacks.Remove(p.PackObjectId);
             }
 
             foreach (Pack p in e.AddedItems)
             {
-                selectedPacks.Add(p.PackObjectId);
+                userSelectedPacks.Add(p.PackObjectId);
             }
         }
     }
