@@ -20,7 +20,7 @@ namespace Shared_ShipContentManager.Services
             var fileLines = File.ReadAllText(filePath);
             var jsonObject = JsonConvert.DeserializeObject<Authentication>(fileLines);
 
-            client.DefaultRequestHeaders.Add(jsonObject.AuthenticationHeader.ToString(), jsonObject.AuthenticationPassword.ToString());
+            client.DefaultRequestHeaders.Add(jsonObject.AuthenticationHeader, jsonObject.AuthenticationPassword);
             client.BaseAddress = new Uri("https://projectshipwebapp.azurewebsites.net/api/QuestionsManagement/");
         }
         public async Task<Pack> CreatePack(Pack pack)
@@ -37,7 +37,6 @@ namespace Shared_ShipContentManager.Services
                 throw new HttpRequestException();
             }
         }
-
         public async Task<Question> CreateQuestion(Question question)
         {
             var queryParameters = buildCreateQuestionQueryParameter(question);
@@ -66,14 +65,13 @@ namespace Shared_ShipContentManager.Services
                 throw new HttpRequestException();
             }
         }
-        public async Task<Question> DeleteQuestion(Question questionId)
+        public async Task<bool> DeleteQuestion(Question question)
         {
-            var stringContent = DataFormatService.JsonToStringContent(questionId);
-            var response = await client.PostAsync("DeleteQuestion", stringContent);
+            var queryParameters = buildDeleteQuestionQueryParameter(question);
+            var response = await client.DeleteAsync("DeleteQuestion?" + queryParameters);
             if (response.IsSuccessStatusCode)
             {
-                var responseString = await DataFormatService.ResponseMessageToString(response);
-                return DataFormatService.JsonToModel<Question>(responseString);
+                return true;
             }
             else
             {
@@ -121,14 +119,11 @@ namespace Shared_ShipContentManager.Services
                 throw new HttpRequestException();
             }
         }
-
-     
-
+        #region BuildQueryMethods
         private object buildCreatePackQueryParameter(Pack pack)
         {
-            return $"packName={pack.Name}&IsMiniPack={pack.IsMiniPack.ToString()}";
+            return $"packName={pack.Name}&IsMiniPack={pack.IsMiniPack}";
         }
-
         private object buildUpdatePackQueryParameter(string packId, string packName)
         {
             return $"packObjectId={packId}&newPackName={packName}";
@@ -136,9 +131,9 @@ namespace Shared_ShipContentManager.Services
         private object buildCreateQuestionQueryParameter(Question question)
         {
             string query = "";
-            foreach(string packId in question.Packs)
+            foreach (string packId in question.Packs)
             {
-                query += $"packObjectIds={packId}&"; 
+                query += $"packObjectIds={packId}&";
             }
             query += $"questionText={question.QuestionText}";
             return query;
@@ -150,10 +145,14 @@ namespace Shared_ShipContentManager.Services
             {
                 query += $"packObjectIds={packId}&";
             }
-            query  += $"questionId={question.QuestionObjectId}&questionText={question.QuestionText}";
+            query += $"questionId={question.QuestionObjectId}&questionText={question.QuestionText}";
 
             return query;
         }
-
+        private object buildDeleteQuestionQueryParameter(Question question)
+        {
+            return $"questionId={question.QuestionObjectId}";
+        }
+        #endregion
     }
 }

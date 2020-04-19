@@ -34,18 +34,21 @@ namespace ShipContentManager.Services
         {
             return await shipService.CreateQuestion(question);
         }
+        public async Task<Question> UpdateQuestion(Question question)
+        {
+            return await shipService.UpdateQuestion(question);
+        }
+        public async Task<bool> DeleteQuestion(Question question)
+        {
+            return await shipService.DeleteQuestion(question);
+        }
         public async Task<Pack> CreatePack(Pack pack)
         {
             return await shipService.CreatePack(pack);
         }
-
         public async Task<Pack> UpdatePack(string packId, string packName)
         {
             return await shipService.UpdatePackName(packId, packName);
-        }
-        public async Task<Question> UpdateQuestion(Question question)
-        {
-            return await shipService.UpdateQuestion(question);
         }
     }
 }

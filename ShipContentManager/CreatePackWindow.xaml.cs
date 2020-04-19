@@ -24,16 +24,21 @@ namespace ShipContentManager
                 Pack p = new Pack();
                 p.Name = txtBoxPackName.Text;
                 p.IsMiniPack = checkBoxIsMiniPack.IsChecked.GetValueOrDefault();
-                await dataService.CreatePack(p);
-                btnSave.IsEnabled = false;
-                MainWindow main = (MainWindow)Application.Current.MainWindow;
-                btnSave.IsEnabled = true;
-                main.RefreshPacksFromDb();
-                this.Close();
-
+                var createPackResponse = await dataService.CreatePack(p);
+                if (createPackResponse != null)
+                {
+                    btnSave.IsEnabled = false;
+                    MainWindow main = (MainWindow)Application.Current.MainWindow;
+                    btnSave.IsEnabled = true;
+                    main.RefreshPacksFromDb();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("An error has occurred while creating this pack.");
+                }
             }
         }
-
         private bool validateFields()
         {
             if(string.IsNullOrWhiteSpace(txtBoxPackName.Text))

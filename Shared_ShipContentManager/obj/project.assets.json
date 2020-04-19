@@ -777,11 +777,12 @@
       ]
     },
     "System.IO/4.3.0": {
-      "sha512": "oUfRldSZ3rKZaiXgUdUQdmcDULGScHIDI1mHHIGz8TlcQ5+/Zf0N7K0cH2z6C3i9sYyt1+DFo5MOqDDXahO8rw==",
+      "sha512": "3qjaHvxQPDpSOYICjUoTsmoq5u6QJAFRUITgeT/4gqkF1bajbSmb1kwSxEA8AHlofqgcKJcM8udgieRNhaJ5Cg==",
       "type": "package",
       "path": "system.io/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -878,11 +879,12 @@
       ]
     },
     "System.Reflection/4.3.0": {
-      "sha512": "CvgmCC4FcNnZjsBm+GEgE4FG4xxY96HPeQ0uieTjheEgH/CKGGOCBe11p/4DjTWtRbm8qyLsiUHhL4qWDfl6xw==",
+      "sha512": "KMiAFoW7MfJGa9nDFNcfu+FpEdiHpWgTcS2HdMpDvt9saK3y/G4GwprPyzqjFH9NTaGPQeWNHU+iDlDILj96aQ==",
       "type": "package",
       "path": "system.reflection/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -958,11 +960,12 @@
       ]
     },
     "System.Reflection.Emit/4.3.0": {
-      "sha512": "av628YIvzyAYbhQyN/B794JmXEURdRjwydagLceMYaC7Sp5zHq04s0/xx/W6/5NsGLfFODYCaCYHELhj+HiYqA==",
+      "sha512": "228FG0jLcIwTVJyz8CLFKueVqQK36ANazUManGaJHkO0icjiIypKW7YLWLIWahyIkdh5M7mV2dJepllLyA1SKg==",
       "type": "package",
       "path": "system.reflection.emit/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -993,11 +996,12 @@
       ]
     },
     "System.Reflection.Emit.ILGeneration/4.3.0": {
-      "sha512": "Fc3t+ov23Nqvwa+vN2HMrHEL6V4Jf9+2g7PDNDJW6gGvIITf0atT/r0Wvzk9mvwgYZfRgqpWRYvwq8XyxywSuA==",
+      "sha512": "59tBslAk9733NXLrUJrwNZEzbMAcu8k344OYo+wfSVygcgZ9lgBdGIzH/nrg3LYhXceynyvTc8t5/GD4Ri0/ng==",
       "type": "package",
       "path": "system.reflection.emit.ilgeneration/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -1037,11 +1041,12 @@
       ]
     },
     "System.Reflection.Emit.Lightweight/4.3.0": {
-      "sha512": "zqXFuBdwiCcEmq+oOTCW3JhG/zIMrTi75etpvx0YNL1wn/Rdus5xRDjmbVYzKDAIBAr0WvkO7gl+L2xFba/yCg==",
+      "sha512": "oadVHGSMsTmZsAF864QYN1t1QzZjIcuKU3l2S9cZOwDdDueNTrqq1yRj7koFfIGEnKpt6NjpL3rOzRhs4ryOgA==",
       "type": "package",
       "path": "system.reflection.emit.lightweight/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -1081,11 +1086,12 @@
       ]
     },
     "System.Reflection.Primitives/4.3.0": {
-      "sha512": "YZZm3Bb5KCCJ/eUuSY1+to1qOCzITMkRgbjxovF7MIR02GsfilFLxedMvlezIjco4TE3nDqJVI5KKKLNTv+m3A==",
+      "sha512": "5RXItQz5As4xN2/YUDxdpsEkMhvw3e6aNveFXUn4Hl/udNTCNhnKp8lT9fnc3MhvGKh1baak5CovpuQUXHAlIA==",
       "type": "package",
       "path": "system.reflection.primitives/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -1401,11 +1407,12 @@
       ]
     },
     "System.Text.Encoding/4.3.0": {
-      "sha512": "vQ6WA0mQUtxCLZ7ZDk+qlvSx8HllOIJVteWfRAkTj2KvCe0YpsxtaEW3ZEp4X5/D6Xv9mUseg2Dj0L+4xxfRcA==",
+      "sha512": "BiIg+KWaSDOITze6jGQynxg64naAPtqGHBwDrLaCtixsa5bKiR8dpPOHA7ge3C0JJQizJE+sfkz1wV+BAKAYZw==",
       "type": "package",
       "path": "system.text.encoding/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -1468,11 +1475,12 @@
       ]
     },
     "System.Threading.Tasks/4.3.0": {
-      "sha512": "ABSUWX1OIqs3swJzABnbZ1+7p5n0Z/PMc2Jf5lUkUkPHvqXqw6xuPWcVpl7eAB46FnYCRWXwtQmkCV0t7yxpnA==",
+      "sha512": "LbSxKEdOUhVe8BezB/9uOGGppt+nZf6e1VFyw6v3DN6lqitm0OSn2uXMOdtP0M3W4iMcqcivm2J6UgqiwwnXiA==",
       "type": "package",
       "path": "system.threading.tasks/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -1567,25 +1575,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vinny\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Jawad Ahsan\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vinny\\Documents\\GitHub\\VincentGaravuso\\ShipContentManager\\Shared_ShipContentManager\\Shared_ShipContentManager.csproj",
+      "projectUniqueName": "C:\\Users\\Jawad Ahsan\\Documents\\GitHub\\ShipContentManager\\Shared_ShipContentManager\\Shared_ShipContentManager.csproj",
       "projectName": "Shared_ShipContentManager",
-      "projectPath": "C:\\Users\\vinny\\Documents\\GitHub\\VincentGaravuso\\ShipContentManager\\Shared_ShipContentManager\\Shared_ShipContentManager.csproj",
-      "packagesPath": "C:\\Users\\vinny\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vinny\\Documents\\GitHub\\VincentGaravuso\\ShipContentManager\\Shared_ShipContentManager\\obj\\",
+      "projectPath": "C:\\Users\\Jawad Ahsan\\Documents\\GitHub\\ShipContentManager\\Shared_ShipContentManager\\Shared_ShipContentManager.csproj",
+      "packagesPath": "C:\\Users\\Jawad Ahsan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jawad Ahsan\\Documents\\GitHub\\ShipContentManager\\Shared_ShipContentManager\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\vinny\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jawad Ahsan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],

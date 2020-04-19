@@ -3,6 +3,7 @@ using ShipContentManager.Services;
 using System;
 using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace ShipContentManager
 {
@@ -27,7 +28,7 @@ namespace ShipContentManager
             List<Pack> packsList = await dataService.GetPacksFromServer();
             foreach (Pack p in packsList)
             {
-                listView1.Items.Add(p);
+                lstViewQuestionPacks.Items.Add(p);
             }
         }
 
@@ -35,25 +36,31 @@ namespace ShipContentManager
         {
             if (validateFileds())
             {
-
                 Question q = new Question();
                 q.DateCreated = DateTime.Now;
                 q.Packs = userSelectedPacks;
                 q.QuestionText = txtBlockQuestionText.Text;
                 //TODO: Add check for response
-                await dataService.CreateQuestion(q);
-                btnSave.IsEnabled = false;
-                MainWindow main = (MainWindow)Application.Current.MainWindow;
-                btnSave.IsEnabled = true;
-                main.RefreshQuestionsFromDb();
-                this.Close();
+                var createResponse = await dataService.CreateQuestion(q);
+                if (createResponse != null)
+                {
+                    btnSave.IsEnabled = false;
+                    MainWindow main = (MainWindow)Application.Current.MainWindow;
+                    btnSave.IsEnabled = true;
+                    main.RefreshQuestionsFromDb();
+                    
+                    this.Close();
+                }
+                else 
+                {
+                    MessageBox.Show("An Error has occurred with creating this question.");
+                }
             }
             else
             {
                 MessageBox.Show("All fields must be filled out!", "Error", MessageBoxButton.OK);
             }
         }
-
         private bool validateFileds()
         {
             if (string.IsNullOrWhiteSpace(txtBlockQuestionText.Text) || userSelectedPacks.Count == 0)
@@ -62,8 +69,7 @@ namespace ShipContentManager
             }
             return true;
         }
-
-        private void listView1_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        private void lstViewQuestionPacks_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             foreach (Pack p in e.RemovedItems)
             {

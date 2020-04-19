@@ -25,7 +25,6 @@ namespace ShipContentManager
             SetQuestionTextLabel(question.QuestionText);
             SetDateCreatedLabel(question.DateCreatedToString());
             populateAffiliatedPacks();
-
         }
         public void SetQuestionNumberLabel(string questionNumber)
         {
@@ -66,7 +65,6 @@ namespace ShipContentManager
                 }
             }
         }
-
         private async void populateAllPacks()
         {
             //TODO: Add check for response
@@ -76,7 +74,7 @@ namespace ShipContentManager
                 listViewPacks.Items.Add(p);
             }
         }
-        private async void btnEditSaveQuestion_Click(object sender, System.Windows.RoutedEventArgs e)
+        private async void btnEditSaveQuestion_Click(object sender, RoutedEventArgs e)
         {
             if (iconSaveEdit.Icon == FontAwesome5.EFontAwesomeIcon.Regular_Save)
             {
@@ -102,17 +100,33 @@ namespace ShipContentManager
                 populateAllPacks();
             }
         }
-
         private void listViewPacks_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             foreach (Pack p in e.RemovedItems)
             {
                 userSelectedPacks.Remove(p.PackObjectId);
             }
-
             foreach (Pack p in e.AddedItems)
             {
                 userSelectedPacks.Add(p.PackObjectId);
+            }
+        }
+        private async void btnDeleteQuestion_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult messageBoxResult = 
+                MessageBox.Show("Are you sure?", "Delete Confirmation", MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                var deleteRequest = await dataService.DeleteQuestion(question);
+                if (deleteRequest)
+                {
+                    MainWindow main = (MainWindow)Application.Current.MainWindow;
+                    main.RefreshQuestionsFromDb();
+                }
+                else
+                {
+                    MessageBox.Show($"There was an error deleting the question {question.QuestionText}");
+                }
             }
         }
     }

@@ -16,6 +16,10 @@
             <Button x:Name="btnEditSaveQuestion" Width="30" Height="30" VerticalAlignment="Center" HorizontalAlignment="Right" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,0,2,0" Background="{x:Null}" Click="btnEditSaveQuestion_Click">
                 <fa:ImageAwesome x:Name="iconSaveEdit" Icon="Regular_Edit" Width="25" Height="25" Foreground="#FFF1F1F1" VerticalAlignment="Center" HorizontalAlignment="Center" />
             </Button>
+            <Button x:Name="btnDeleteQuestion" Width="30" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,0,2,0" Background="{x:Null}" Click="btnDeleteQuestion_Click">
+                <fa:ImageAwesome x:Name="iconDeleteQuestion" Icon="Regular_TrashAlt" Width="25" Height="25" Foreground="#FFF1F1F1" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Button>
+
             <Label x:Name="lblQuestionNumber" Foreground="#FFF1F1F1" Content="&lt;Question Number&gt;" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" />
         </Grid>
         <TextBox x:Name="txtBoxQuestionText" VerticalScrollBarVisibility="Auto" Margin="5,39,5,101" ScrollViewer.CanContentScroll="True" TextWrapping="Wrap" Foreground="#FF1C1C1C" FontWeight="Normal" FontSize="16" IsEnabled="False" />

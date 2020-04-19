@@ -54,14 +54,12 @@ namespace ShipContentManager
                 hamburgerMenuSwitch = true;
             }
         }
-        
         private void showWrapPanelLoading()
         {
             contentWrapPanel.Children.Clear();
             contentWrapPanel.Children.Add(iconLoading);
             contentWrapPanel.VerticalAlignment = VerticalAlignment.Center;
         }
-
         private async void btnPacks_Click(object sender, RoutedEventArgs e)
         {
             ShowHideMenu();
@@ -128,7 +126,6 @@ namespace ShipContentManager
                 displayPacks(dataService.GetLocalPacks());
             }
         }
-
         private void btnAddContent_Click(object sender, RoutedEventArgs e)
         {
             if(btnAddContent.ToolTip.ToString() == AddPack)

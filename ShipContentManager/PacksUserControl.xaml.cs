@@ -2,6 +2,7 @@
 using System.Windows;
 using ShipContentManager.Services;
 using Shared_ShipContentManager.Models;
+using FontAwesome5;
 
 namespace ShipContentManager
 {
@@ -42,20 +43,28 @@ namespace ShipContentManager
         }
         private async void btnEditSavePack_Click(object sender, RoutedEventArgs e)
         {
-            if(iconSaveEdit.Icon == FontAwesome5.EFontAwesomeIcon.Regular_Save)
+            if(iconSaveEdit.Icon == EFontAwesomeIcon.Regular_Save)
             {
-                iconSaveEdit.Icon = FontAwesome5.EFontAwesomeIcon.Regular_Edit;
+                iconSaveEdit.Icon = EFontAwesomeIcon.Regular_Edit;
                 txtBoxPackName.Visibility = Visibility.Hidden;
                 lblPackName.Visibility = Visibility.Visible;
                 btnEditSavePack.IsEnabled = false;
-                await dataService.UpdatePack(pack.PackObjectId, txtBoxPackName.Text.ToLower());
-                btnEditSavePack.IsEnabled = true;
-                MainWindow main = (MainWindow)Application.Current.MainWindow;
-                main.RefreshPacksFromDb();
+                
+                var updatePackResponse = await dataService.UpdatePack(pack.PackObjectId, txtBoxPackName.Text.ToLower());
+                if (updatePackResponse != null)
+                {
+                    btnEditSavePack.IsEnabled = true;
+                    MainWindow main = (MainWindow)Application.Current.MainWindow;
+                    main.RefreshPacksFromDb();
+                }
+                else
+                {
+                    MessageBox.Show("An error has occurred while updating the pack.");
+                }
             }
             else
             {
-                iconSaveEdit.Icon = FontAwesome5.EFontAwesomeIcon.Regular_Save;
+                iconSaveEdit.Icon = EFontAwesomeIcon.Regular_Save;
                 txtBoxPackName.Text = lblPackName.Content.ToString();
                 txtBoxPackName.Visibility = Visibility.Visible;
                 lblPackName.Visibility = Visibility.Hidden;

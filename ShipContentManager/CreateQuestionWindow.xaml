@@ -15,10 +15,10 @@
         <Label x:Name="lblQuestionText" Content="Question" Margin="10,52,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="14" Foreground="#FF1C1C1C" FontWeight="Normal"/>
         <TextBox x:Name="txtBlockQuestionText" Margin="10,83,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="65" Background="#FFF1F1F1" BorderBrush="Gray" Foreground="#FF1C1C1C"/>
         <ListView 
-              Name="listView1"
+              Name="lstViewQuestionPacks"
               ItemsSource="{Binding}"
               IsSynchronizedWithCurrentItem="True"
-              SelectionChanged="listView1_SelectionChanged" Margin="10,153,10,40">
+              SelectionChanged="lstViewQuestionPacks_SelectionChanged" Margin="10,153,10,40">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
