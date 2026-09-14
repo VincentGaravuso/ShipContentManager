@@ -9,6 +9,7 @@ using System.Collections.Generic;
 
 namespace Shared_ShipContentManager.Services
 {
+    //what the hell were we doing?
     public partial class ShipClient : IShipClientService
     {
         private readonly HttpClient client;
